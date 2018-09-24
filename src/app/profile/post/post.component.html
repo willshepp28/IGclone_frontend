@@ -1,0 +1,18 @@
+<div class="row bt-grey" *ngIf="postLength">
+    <div class="col-md-4 pt-5" *ngFor="let post of post">
+        <div *ngIf="!post">
+            <p>No posts yet</p>
+        </div>
+
+        <div *ngIf="post">
+            <a routerLink=""></a>
+            <img src="{{post.photo}}" alt="" style="height: 200px" (click)="selectPost(post.id)">
+        </div>
+
+    </div>
+</div>
+
+
+<div *ngIf="!postLength" class="mb-3 mt-4 mx-auto grey_ptag">
+    <p class="text-center">You currently have no posts to show at the moment!</p>
+</div>

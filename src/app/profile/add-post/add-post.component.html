@@ -1,0 +1,32 @@
+<!-- <div>
+
+    <div>
+        <input type="text" [(ngModel)]="caption" name="caption"  placeholder="Add a Caption...">
+      </div>
+      
+    <div>
+      <input type="file" (change)="createFormData($event)">
+    </div>
+
+   
+    <button (click)="upload()">Add New Post</button>
+  </div> -->
+
+
+
+  <form class="form">
+
+      <div class="form-group">
+          <label for="">Username</label>
+          <input type="text" [(ngModel)]="caption" name="caption"  placeholder="Add a Caption..." class="form-control rounded-0">
+        </div>
+
+        
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="file" (change)="createFormData($event)" class="form-control rounded-0">
+    </div>
+
+
+    <button (click)="upload()" type="button" class="btn btn-primary float-right">Add New Post</button>
+  </form>

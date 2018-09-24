@@ -1,0 +1,59 @@
+
+<div *ngIf="postLength">
+    <div class="card mb-3 mt-4 mx-auto " *ngFor="let post of posts">
+
+        <!-- Card Header -->
+          <div class="card-header">
+              <div class="container">
+                <div class="row">
+                  <a routerLink="/profile/{{post.user_id}}"><img src="{{post.profilePic}}" class="rounded-circle smallPic" alt=""></a>
+                  <a routerLink="/profile/{{post.user_id}}"><strong>{{ post.username }}</strong></a>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Card Image -->
+          <img class="card-img-top" src="{{post.photo}}" alt="Card image cap">
+      
+          <!-- Card body -->
+          <div class="card-body">
+            <div class="card-body padding0">
+              <button *ngIf="!post.totalLikes" class="ig_sprites hw24 borderNone outlineNone" id="heart" (click)="LikePost(post.id)"></button>
+              <button *ngIf="post.totalLikes > 0" class="ig_sprites hw24 borderNone outlineNone" id="heart2" (click)="LikePost(post.id)"></button>
+      
+              <button class="ig_sprites hw24 borderNone outlineNone" id="comment"></button>
+              <span *ngIf="!post.isSaved" class="ig_sprites hw24 borderNone outlineNone" id="save" (click)="save(post.id)"></span>
+              <span *ngIf="post.isSaved" class="ig_sprites hw24 borderNone outlineNone" id="saved" (click)="save(post.id)"></span>
+        
+            </div>
+            <strong *ngIf="post.totalLikes == 0">No likes yet! {{ post.totalLikes}}</strong>
+            <strong *ngIf="post.totalLikes == 1">{{ post.totalLikes }} like</strong>
+            <strong *ngIf="post.totalLikes > 1">{{ post.totalLikes}} likes</strong>
+      
+            <p class="card-text"><strong>{{ post.username }} </strong> {{ post.caption }}</p>
+      
+            <p class="card-text text-muted">Load more comments</p>
+      
+            <p *ngFor="let say of post['comments'] "class="card-text"><strong>{{say.username}} - </strong> {{ say.comment}}</p>
+      
+            <hr>
+            
+            <!-- <form class="form">
+              <input [(ngModel)]="userComment" name="comment" type="text" class="form-control rounded-0"  required>
+              <button (click)="addComment(post.id)"  class="btn btn-primary">Submit</button>
+            </form> -->
+            <section class="sH9wk  _JgwE ">
+              <div class="RxpZH">
+              <form class="X7cDz" (keydown)="submit($event, post.id)"><textarea aria-label="Add a comment…" placeholder="Add a comment…"  class="Ypffh noBorder commentForm" autocomplete="off" autocorrect="off"></textarea>
+              </form></div>
+            </section>
+    
+            <p class="card-text"><small class="text-muted">1 day ago</small></p>
+          </div>
+        </div>
+</div>
+
+<div *ngIf="!postLength" class="mb-3 mt-4 mx-auto grey_ptag">
+  <p class="text-center">Their are currently no posts to show at the moment!</p>
+</div>
+

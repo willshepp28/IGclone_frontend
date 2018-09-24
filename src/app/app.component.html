@@ -1,0 +1,76 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-light bg-light">
+  <a routerLink="/home" class="navbar-brand ig_sprite1" id="ig_logo"></a>
+
+
+  <!-- <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form> -->
+
+<ul *ngIf="isAuthenticated()" class="navbar-nav flex_row ">
+  <a routerLink="/explore"><li class="nav_item nav-link ig_sprite1 hw24" id="explore"></li></a>
+  <!-- <li class="nav_item nav-link ig_sprite1 hw24" id="activity_feed"></li> -->
+  <button (click)="getFollowers()" class="border-none noOutline" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"><li class="nav_item nav-link ig_sprite1 hw24" id="activity_feed"></li></button>
+  <a routerLink="/profile"><li class="nav_item nav-link ig_sprite1 hw24" id="profile"></li></a>  
+  <!-- <button (click)="clear()" class="btn btn-primary">Clear</button> -->
+</ul>
+
+<ul *ngIf="!isAuthenticated()" class="navbar-nav flex-row">
+  <a routerLink="/login" ><li class="nav_text nav-link">Login</li></a>
+  <a routerLink="/signup"><li class="nav_text nav-link">Signup</li></a>
+</ul>
+
+</nav>
+
+
+<div class="row mt-2">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <!-- <div class="card card-body">
+          <div class="card-header">
+              <h5>< Follow Requests</h5>
+            </div>
+        <div class="row bottomLine activity_feed" *ngFor="let user of users">
+          <img src="https://cdn.credihealth.com/system/images/assets/8979/original/icon.jpg?1516271343" class="rounded-circle" alt="">
+          <p><strong>{{user.name}}</strong>- {{user.message}}</p>
+        </div>
+      
+      </div> -->
+
+      <div class="card activityCard">
+          <div class="card-header">
+            <strong>< Follow Requests</strong>
+          </div>
+          <ul class="list-group list-group-flush" *ngFor="let follower of followRequests">
+            <li class="list-group-item" *ngIf="followRequestLength">
+              <div class="row">
+                <div class="col"><img src="{{follower.profilePic}}" class="rounded-circle" alt="" style="height:35px"></div>
+                <div class="col"><strong>{{follower.username}}</strong></div>
+                <div class="col"><button class="btn btn-primary" type="button" (click)="approveRequest(follower.followerId)">Approve</button></div>
+                <div class="col"><button class="btn btn-light" type="button" (click)="denyRequest(follower.followerId)">Hide</button></div>
+              </div>
+            </li>
+          </ul>
+
+          <li class="list-group-item" *ngIf="!followRequestLength">
+              <div class="row">
+                <div class="col"><p class="text-center">You have no follow requests at the moment!</p></div>
+              </div>
+            </li>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <router-outlet></router-outlet>
+

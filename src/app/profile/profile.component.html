@@ -1,0 +1,57 @@
+
+<div class="container pt-5 w-75">
+  
+  <div class="row w-75 m-auto">
+    <div class="col">
+        <img src="{{user.profilePic}}" style="height:100px" alt="" class="rounded-circle">
+    </div>
+
+    <div class="col">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3 class="helvetica-font font-weight200">{{user.username}}</h3>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <span class="small-font"><strong>{{userInfo.postAmount}}</strong> posts  <strong>{{userInfo.followingAmount}}</strong> followers <strong>{{userInfo.followerAmount}}</strong> following</span>
+              </div>
+        </div>
+
+
+        <div class="row mt-3">
+          <div class="col-6"><button class="btn btn-primary" (click)="showAddPost()">Add a Post</button></div>
+          <div class="col-6"><button class="btn btn-primary" (click)="showChangeProfilePic()">Change Profile Picture</button></div>
+        </div>
+
+      </div>
+    </div>
+
+    
+  </div>
+
+
+    <div class="row mt-50">
+        <div class="col">
+         <p class="text-center" (click)="showPosts()">Posts</p>
+        </div>
+  
+        <div class="col">
+            <p class="text-center" (click)="showSaved()">Saved</p>
+        </div>
+      </div>
+
+      
+  
+
+      <router-outlet></router-outlet>
+
+
+  
+
+</div>
+
+
+

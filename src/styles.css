@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #fafafa;
+}
+
+.red {
+    background-color: red;
+}
+
+.white-li li {
+    color: white !important;
+   
+}
+.hw24 {
+    height: 24px;
+    width: 24px;
+}
+
+.ig_sprite1 {
+    background: url("https://www.instagram.com/static/bundles/base/sprite_core.png/96319a506a03.png");
+}
+
+#ig_camera {
+    background-position: -401px -388px;
+    height: 30px;
+    width: 30px;
+}
+
+#ig_logo {
+    background-position: -98px -203px;
+    height: 35px;
+    width: 176px;
+}
+
+#explore {
+    background-position: -458px -250px;
+}
+
+#activity_feed {
+    background-position: -458px -328px;
+}
+
+#profile {
+    background-position: -157px -357px;
+}
+
+.navIcon {
+    display: inline-block;
+}
+
+.flex_row {
+    flex-direction: row;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #fafafa;
+}
+.bold {
+    color:#262626;
+}
+
+a {
+    color: #262626 !important;
+    text-decoration: none;
+}
+
+.ig_sprites2 {
+    background: url("https://www.instagram.com/static/bundles/base/sprite_core.png/96319a506a03.png");
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.ig_sprites {
+    background: url("https://www.instagram.com/static/bundles/base/sprite_glyphs.png/2fc7be4c62f6.png");
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+.card {
+    width:  50vw !important;
+}
+
+.hw24 {
+    height:24px;
+    width: 24px;
+}
+
+#heart {
+    background-position: -210px -104px;
+}
+
+#comment {
+    background-position: -98px -138px;
+}
+
+#save {
+    background-position: -131px -184px;
+}
+
+#saved {
+    background-position: -52px -184px;
+}
+
+#heart2 {
+    background-position: -210px -26px;
+}
+
+.padding0 {
+    padding: 0;
+}
+
+.card-body {
+    font-size: 12px;
+}
+
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.font-weight200 {
+    font-weight: 200px;
+}
+
+.helvetica-font {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.border-none {
+    border:none;
+    
+}
+
+.noOutline {
+    outline: none !important;
+}
+
+.activityCard {
+    width: 34vw !important;
+    float: right;
+    position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    box-shadow: 0 0 5px rgba(0,0,0,.0975);
+}
+
+.grey_ptag {
+    color: #999!important;
+    font-weight: 500!important;
+    margin-top: 100px !important;
+}
+
+
+.grape-bg {
+    background-image: linear-gradient(to left, #8370e6, #ee0cf6);
+}

@@ -1,0 +1,27 @@
+
+
+<div class="row" *ngFor="let post of post">
+  <!-- Get photo associaited with this post -->
+  <div class="col-6">
+    <img src="{{post.photo}}" alt="" style="width: 50vw">
+  </div>
+
+  <!-- Get user info and comments associated with this post -->
+  <div class="col-6">
+     
+    <div class="row bottomBorder mb-50">
+      <div class="col"><img src="{{ post.profilePic}}" alt="" class="rounded-circle" style="height: 40px;"></div>
+      <div class="col"><p>{{ post.username}}</p></div>
+      <hr>
+    </div>
+
+
+   <div class="mb-80">
+     <a href="/profile/{{post.mainUserId}}"><strong>{{post.username}} - </strong></a><span>{{post.caption}}</span>
+   </div>
+
+   <div class="col comments" *ngFor="let comment of comments">
+    <p><a href="/profile/{{comment.userId}}"><strong>{{comment.username}} - </strong></a>{{comment.comment}}</p>
+   </div>
+  </div>
+</div>
