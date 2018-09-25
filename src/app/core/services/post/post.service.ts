@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class PostService {
 
-  private _postUrl = 'http://localhost:3000/api/v1/posts';
+  private _postUrl = 'https://igclone-backend.herokuapp.com/api/v1/posts';
 
   constructor(
     private http: HttpClient,
@@ -46,7 +46,7 @@ getUpdatedPost(postId){
 |--------------------------------------------------------------------------
 */
   getPost(postId){
-    return this.http.get(`http://localhost:3000/api/v1/posts/${postId}`)
+    return this.http.get(`https://igclone-backend.herokuapp.com/api/v1/posts/${postId}`)
   }
 
 

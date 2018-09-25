@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TotalService {
 
-  private _totalUrl = "http://localhost:3000/api/v1/total";
+  private _totalUrl = "https://igclone-backend.herokuapp.com/api/v1/total";
 
   constructor(
     private router: Router,

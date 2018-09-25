@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 export class CommentService {
 
 
-  private _commentUrl = "http://localhost:3000/api/v1/comments";
+  private _commentUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
 
   constructor(
     private http: HttpClient,

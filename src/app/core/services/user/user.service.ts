@@ -17,6 +17,6 @@ export class UserService {
 
 
   getUser(id){
-    return this.http.get<any>(`http://localhost:3000/api/v1/profile/${id}`)
+    return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/profile/${id}`)
   }
 }

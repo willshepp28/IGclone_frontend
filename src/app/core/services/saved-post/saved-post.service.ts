@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SavedPostService {
 
-  private _saveUrl = "http://localhost:3000/api/v1/savedPost";
+  private _saveUrl = "https://igclone-backend.herokuapp.com/api/v1/savedPost";
 
   constructor(
     private http: HttpClient
@@ -27,6 +27,6 @@ export class SavedPostService {
 
 
   getUsersSavedPost(id){
-    return this.http.get<any>(`http://localhost:3000/api/v1/savedPost/${id}`)
+    return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/savedPost/${id}`)
   }
 }

@@ -13,7 +13,7 @@ export class AddPostComponent implements OnInit {
   selectedFile: File = null;
   fd = new FormData();
   caption: string = null;
-  private url = "http://localhost:3000/api/v1/imageUpload/";
+  private url = "https://igclone-backend.herokuapp.com/api/v1/imageUpload/";
 
   constructor(
     private http: HttpClient,

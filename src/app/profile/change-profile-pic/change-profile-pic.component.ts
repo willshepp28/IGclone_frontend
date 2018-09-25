@@ -18,7 +18,7 @@ export class ChangeProfilePicComponent implements OnInit {
 
   selectedFile: File = null;
   fd = new FormData();
-  private url = "http://localhost:3000/api/v1/imageUpload/";
+  private url = "https://igclone-backend.herokuapp.com/api/v1/imageUpload/";
  
 
 

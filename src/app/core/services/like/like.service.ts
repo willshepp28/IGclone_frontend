@@ -9,7 +9,7 @@ export class LikeService {
 
 
 
-  private _likeUrl = "http://localhost:3000/api/v1/likes";
+  private _likeUrl = "https://igclone-backend.herokuapp.com/api/v1/likes";
 
   constructor(
     private http: HttpClient
