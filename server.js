@@ -15,9 +15,6 @@ application.get("/*", function(request, response) {
     response.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
 });
 
-
-application.listen(process.env.PORT || 8080, () => {
-    console.log("Console listening");
-})
+console.log("Server listening");
 
 
