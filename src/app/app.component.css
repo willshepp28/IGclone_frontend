@@ -8,6 +8,9 @@ nav {
     border-bottom: 1px solid rgba(0,0,0,.0975);
     /* position: fixed; */
     width: 100%;
+    /* display: flex;
+    justify-content: center; */
+  
 }
 
 .activity_feed {
@@ -16,3 +19,25 @@ nav {
     cursor: pointer;
     border-bottom: solid 1px #e6e6e6;
 }
+
+.transparent {
+    background: transparent;
+}
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 446px) {
+    /* body {
+        background:  red !important;
+    } */
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .icon-ul {
+        margin-top: 20px;
+    }
+    
+   }
