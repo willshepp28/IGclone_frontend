@@ -15,6 +15,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   private Url = "https://igclone-backend.herokuapp.com/api/v1/";
+  // private Url2 = "http://localhost:3000/api/v1/";
 
   constructor(
     private http: HttpClient,
@@ -22,6 +23,7 @@ export class AuthService {
   ) { }
 
   registerUser(user) {
+    console.log(`User: ${user}`)
     return this.http.post<any>(this.Url + "signup",user);
   };
 

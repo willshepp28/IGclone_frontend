@@ -17,28 +17,61 @@ import { AuthService } from '../core/authentication/auth.service';
 })
 export class SignupComponent implements OnInit {
 
+  registerUserForm: FormGroup
+
   registerUserData = [];
   constructor(
     private _auth: AuthService,
-    private _router: Router
+    private _router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
+
+    this.registerUserForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(1)]]
+  });
   }
 
-  registerUser() {
-   this._auth.registerUser(this.registerUserData)
-   .subscribe(
-     response => { 
+
+  registerUser(){
+
+    console.log(this.registerUserForm.value)
+
+     // stop here if form is invalid
+     if (this.registerUserForm.invalid) {
+      return;
+  }
+
+  this._auth.registerUser(this.registerUserForm.value)
+    .subscribe(
+      response => {
+
+        localStorage.setItem("token", response.token);
+
+        // redirect to the login page
+        this._router.navigate(["/login"])
+      },
+
+      error => console.log(error)
+    )
+  }
+
+  // registerUser() {
+  //  this._auth.registerUser(this.registerUserData)
+  //  .subscribe(
+  //    response => { 
        
-      console.log("issa success") 
-      console.log( response )
-      localStorage.setItem('token', response.token);
-      this._router.navigate(["/login"]);
+  //     console.log("issa success") 
+  //     console.log( response )
+  //     localStorage.setItem('token', response.token);
+  //     this._router.navigate(["/login"]);
 
-      error => { console.log("issa error") ,console.log( error )}
-    }
-   );
-  }
+  //     error => { console.log("issa error") ,console.log( error )}
+  //   }
+  //  );
+  // }
 
 }
