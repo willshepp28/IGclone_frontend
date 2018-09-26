@@ -3,7 +3,7 @@ const application = express();
 const path = require("path");
 
 
-application.use(express.static(__dirname + "/dist"));
+application.use(express.static(__dirname + "/dist/frontend"));
 
 
 application.listen(process.env.PORT || 8080);
@@ -12,7 +12,12 @@ application.listen(process.env.PORT || 8080);
 // PathLocationStategy
 
 application.get("/*", function(request, response) {
-    response.sendFile(path.join(__dirname + "/dist/IGclone/index.html"));
+    response.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
 });
 
-console.log("Console listening");
+
+application.listen(process.env.PORT || 8080, () => {
+    console.log("Console listening");
+})
+
+
