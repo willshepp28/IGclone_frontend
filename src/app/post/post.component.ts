@@ -38,6 +38,8 @@ export class PostComponent implements OnInit {
         (params: ParamMap) => {
           let theid = parseInt(params.get('id'));
           console.log(theid);
+
+          console.log(`The post id is : ${theid}`)
           this.id = theid;
 
           this.postService.getPost(theid)

@@ -45,7 +45,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    
+    // page only routing to logged in users page
+    // Because we are only getting the token and not the route params
     var token = this.getDecodedAccessToken(localStorage.getItem('token'));
     var tokenId = token.user[0].id;
 
