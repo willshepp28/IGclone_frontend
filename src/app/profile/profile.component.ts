@@ -18,7 +18,12 @@ import { TotalService } from '../core/services/total/total.service';
 })
 export class ProfileComponent implements OnInit {
 
-  user = [];
+  burr = "jdlfjdkfjdklsfjdlk";
+
+  profilePic: string;
+  username: string;
+
+
   postLength: number;
 
   userInfo = {
@@ -51,7 +56,9 @@ export class ProfileComponent implements OnInit {
     this.userService.getUser(tokenId)
       .subscribe(
         response => { console.log(response) ,
-           this.user = response
+          this.username = response.username;
+          this.profilePic = response.profilePic;
+          
           },
         error => console.log(error)
       )
