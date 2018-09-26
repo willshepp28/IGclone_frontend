@@ -25,3 +25,19 @@ Explore Styling
 .pointer {
     cursor: pointer;
 }
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 574px) {
+    /* body {
+        background:  red !important;
+    } */
+
+    .discover-card {
+        margin-top: 10px;
+        margin-left: 0 !important;
+    }
+
+
+    
+   }
