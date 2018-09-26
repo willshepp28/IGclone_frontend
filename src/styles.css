@@ -155,3 +155,11 @@ a {
 .grape-bg {
     background-image: linear-gradient(to left, #8370e6, #ee0cf6);
 }
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 446px) {
+   /* body {
+       background:  red !important;
+   } */
+  }
