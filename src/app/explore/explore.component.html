@@ -6,9 +6,12 @@
 
   <div class="row mx-auto">
     <div *ngFor="let user of users" class="card discover-card col-xs-4 col-sm-4 col-md-3" style="margin-left:25px; padding:20px">
-      <img class="card-img-top rounded-circle" src="{{user.profilePic}}" style="height: 78px; width: 78px; margin:0 auto" alt="Card image cap">
+
+      <a routerLink="/profile/{{user.id}}/post" class="mx-auto"><img class="card-img-top rounded-circle" src="{{user.profilePic}}" style="height: 78px; width: 78px; margin:0 auto" alt="Card image cap"></a>
+    
       <div class="card-body">
-        <p class="card-text text-center pStyle">{{user.username}}</p>
+          <a routerLink="/profile/{{user.id}}/post"> <p class="card-text text-center pStyle">{{user.username}}</p></a>
+        <!-- <p class="card-text text-center pStyle">{{user.username}}</p> -->
       </div>
       <button (click)="followUser(user.id)" class="btn btn-primary" style="width:50%; margin: 0 auto">Follow</button>
     </div>
