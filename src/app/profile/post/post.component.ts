@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 
 
@@ -21,18 +21,44 @@ export class PostComponent implements OnInit {
   postLength: number;
 
 
+
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    var token = this.getDecodedAccessToken(localStorage.getItem('token'));
-    var tokenId = token.user[0].id;
 
-    this.auth.getUserPost(tokenId)
+    var token;
+    var tokenId;
+
+    this.route.parent.params.subscribe(params => {
+      console.log(`******* /profile/${params.id}`);
+      console.log(params);
+      console.log("********");
+
+      if (params.id === "post") {
+
+     
+        token = this.getDecodedAccessToken(localStorage.getItem('token'));
+        tokenId = token.user[0].id;
+        
+      } else {
+        tokenId = params.id;
+      }
+    });
+
+
+
+    console.log("inside post")
+    console.log(tokenId);
+    console.log("inside post")
+
+    this.auth.getAllUserPosts(tokenId)
       .subscribe(
-        response => { console.log(response), this.post = response, this.postLength = this.post.length},
+
+        response => { console.log(response), this.post = response, this.postLength = this.post.length },
         error => console.log(error)
       )
   }
@@ -44,11 +70,11 @@ export class PostComponent implements OnInit {
 
 
   getDecodedAccessToken(token: string): any {
-    try{
-        return jwt_decode(token);
+    try {
+      return jwt_decode(token);
     }
-    catch(Error){
-        return null;
+    catch (Error) {
+      return null;
     }
   }
 

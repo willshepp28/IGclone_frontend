@@ -15,7 +15,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
   private Url = "https://igclone-backend.herokuapp.com/api/v1/";
-  // private Url2 = "http://localhost:3000/api/v1/";
+   private Url2 = "http://localhost:3000/api/v1/";
 
   constructor(
     private http: HttpClient,
@@ -58,6 +58,10 @@ export class AuthService {
 
  getUserPost(id){
   return this.http.get<any>(`${this.Url}posts/${id}`)
+ }
+
+ getAllUserPosts(id){
+  return this.http.get<any>(`${this.Url}posts/all/${id}`)
  }
   
  

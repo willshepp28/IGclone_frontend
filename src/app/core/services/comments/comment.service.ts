@@ -16,6 +16,7 @@ export class CommentService {
 
 
   private _commentUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
+  private _commentUrl2 = "http://localhost:3000/api/v1/comments";
 
   constructor(
     private http: HttpClient,

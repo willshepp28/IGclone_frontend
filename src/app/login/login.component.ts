@@ -50,6 +50,7 @@ loginUser(){
         this._router.navigate(["/home"]);
       },
       error => {
+        console.log(error);
         console.log("This is a error brah")
       }
     )

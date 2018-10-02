@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: "home", component: HomeComponent, canActivate: [AuthGuard]},
     { path: "signup", component: SignupComponent},
     { path: "post/:id", component: OnePostComponent },
-    { path: "profile", component: ProfileComponent, canActivate: [AuthGuard],
+    { path: "profile/:id", component: ProfileComponent, canActivate: [AuthGuard],
     children: [
         { path: "", redirectTo: 'post', pathMatch: "full"},
         { path: 'post', component: PostComponent},

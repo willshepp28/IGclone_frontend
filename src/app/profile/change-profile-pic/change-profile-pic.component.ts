@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { ActivatedRoute, ParamMap } from '@angular/router';
+
 import { UploadFileService } from '../../core/services/upload-file-service/upload-file.service';
 
 
@@ -24,7 +26,8 @@ export class ChangeProfilePicComponent implements OnInit {
 
   constructor(
     private uploadService: UploadFileService,
-    private http: HttpClient
+    private http: HttpClient,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {

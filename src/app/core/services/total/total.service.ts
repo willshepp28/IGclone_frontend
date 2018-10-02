@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class TotalService {
 
   private _totalUrl = "https://igclone-backend.herokuapp.com/api/v1/total";
+  private _totalUrl2 = "http://localhost:3000/api/v1/total";
 
   constructor(
     private router: Router,
@@ -15,17 +16,20 @@ export class TotalService {
   ) { }
 
 
-  getNumberOfPosts(){
-    return this.http.get<any>(this._totalUrl + "/postAmount");
+  getNumberOfPosts(id){
+    console.log(id);
+    return this.http.get<any>(this._totalUrl + `/postAmount/${id}`);
   }
 
 
-  getTotalFollowing(){
-    return this.http.get<any>(this._totalUrl + "/following");
+  getTotalFollowing(id){
+    console.log(id);
+    return this.http.get<any>(this._totalUrl + `/following/${id}`);
   }
 
-  getUserWhereFollower(){
-    return this.http.get<any>(this._totalUrl + "/follower");
+  getUserWhereFollower(id){
+    console.log(id);
+    return this.http.get<any>(this._totalUrl + `/follower/${id}`);
   }
 
 

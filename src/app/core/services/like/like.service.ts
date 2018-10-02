@@ -10,6 +10,7 @@ export class LikeService {
 
 
   private _likeUrl = "https://igclone-backend.herokuapp.com/api/v1/likes";
+  
 
   constructor(
     private http: HttpClient
@@ -17,18 +18,7 @@ export class LikeService {
   ) { }
 
 
-  // registerUser(user) {
-  //   return this.http.post<any>(this._signupUrl, user)
-  // }
-
-
-  // addLike(postId) {
-  //   return this.http.post<any>(this._likeUrl, postId)
-  // }
-
-  // addLike(postId): Observable<any> {
-  //   return this.http.post<any>(this._likeUrl, postId)
-  // }
+ 
 
   addLike(postId){
 

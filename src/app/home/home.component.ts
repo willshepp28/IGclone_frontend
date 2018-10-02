@@ -63,6 +63,7 @@ export class HomeComponent implements OnInit {
           // console.log(response),
             this.posts = response,
             this.postLength = this.posts.length
+            console.log(this.posts);
         },
         error => {
           if (error instanceof HttpErrorResponse) {
@@ -115,41 +116,50 @@ export class HomeComponent implements OnInit {
 
   LikePost(id) {
 
+    // we add the like
     this.likeService.addLike({ id: id })
       .subscribe(
         response => {
 
+          // we get the like by passing the 
           this.postService.getUpdatedPost(id)
             .subscribe(
 
               response => {
               
-             
+                console.log(response[0].totalLikes);
 
-                for(let i = 0; i < this.posts.length; i++) {
-
+                for(let i =0; i < this.posts.length; i++) {
+                  
                   if(response[0].id === this.posts[i].id) {
-
-
-                    if(this.posts[i].isSaved) {
-                      this.posts[i].isSaved = false;
-
-                    } else {
-                      this.posts[i].isSaved = true;
-                    }
-
-
-                    // console.log("*******_______********")
-                    // console.log(response[0].isSaved)
-                    // console.log("*******_______********")
-                    // this.posts[i].isSaved = response[0].isSaved
-                  }
+                    this.posts[i].totalLikes = response[i].totalLikes
                 }
+              }
+
+                // for(let i = 0; i < this.posts.length; i++) {
+
+                //   if(response[0].id === this.posts[i].id) {
 
 
-                console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
-                console.log(this.posts[0])
-                console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
+                //     if(this.posts[i].isSaved) {
+                //       this.posts[i].isSaved = false;
+
+                //     } else {
+                //       this.posts[i].isSaved = true;
+                //     }
+
+
+                //     // console.log("*******_______********")
+                //     // console.log(response[0].isSaved)
+                //     // console.log("*******_______********")
+                //     // this.posts[i].isSaved = response[0].isSaved
+                //   }
+                // }
+
+
+                // console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
+                // console.log(this.posts[0])
+                // console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
                 
               },
               error => {
@@ -184,7 +194,6 @@ export class HomeComponent implements OnInit {
 
               response => {
 
-
                 for(let i = 0; i < this.posts.length; i++) {
 
                   if(response[0].id === this.posts[i].id) {
@@ -197,6 +206,10 @@ export class HomeComponent implements OnInit {
                       this.posts[i].isSaved = true;
                     }
 
+                    console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
+                    console.log(this.posts[0])
+                    console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
+
 
                     // console.log("*******_______********")
                     // console.log(response[0].isSaved)
@@ -204,6 +217,28 @@ export class HomeComponent implements OnInit {
                     // this.posts[i].isSaved = response[0].isSaved
                   }
                 }
+
+
+
+                // for(let i = 0; i < this.posts.length; i++) {
+
+                //   if(response[0].id === this.posts[i].id) {
+
+
+                //     if(this.posts[i].isSaved) {
+                //       this.posts[i].isSaved = false;
+
+                //     } else {
+                //       this.posts[i].isSaved = true;
+                //     }
+
+
+                //     // console.log("*******_______********")
+                //     // console.log(response[0].isSaved)
+                //     // console.log("*******_______********")
+                //     // this.posts[i].isSaved = response[0].isSaved
+                //   }
+                // }
               }
             )
         }
@@ -223,13 +258,7 @@ export class HomeComponent implements OnInit {
     //   )
   }
 
-  // comment = {};
-  addComment(postId) {
-
-    this.comments.push({ postId: postId, comment: this.userComment });
-    console.log(this.comments);
-
-  }
+ 
 
 
 

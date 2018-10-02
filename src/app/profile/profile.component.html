@@ -23,7 +23,7 @@
         </div>
 
 
-        <div class="row mt-3">
+        <div class="row mt-3" *ngIf="show">
           <div class="col-6"><button class="btn btn-primary" (click)="showAddPost()">Add a Post</button></div>
           <div class="col-6"><button class="btn btn-primary" (click)="showChangeProfilePic()">Change Profile Picture</button></div>
         </div>
@@ -40,7 +40,7 @@
          <p class="text-center" (click)="showPosts()">Posts</p>
         </div>
   
-        <div class="col">
+        <div class="col" *ngIf="show">
             <p class="text-center" (click)="showSaved()">Saved</p>
         </div>
       </div>
