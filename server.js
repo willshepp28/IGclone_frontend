@@ -11,7 +11,7 @@ application.use(express.static(__dirname + "/dist/frontend"));
 
 // PathLocationStategy
 
-application.get("/*", function(request, response) {
+application.get("*", function(request, response) {
     response.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
 });
 
