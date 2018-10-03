@@ -27,7 +27,7 @@ export class LikeService {
       "Content-Type": "application/json"
     });
 
-    return this.http.post<any>(this._likeUrl2, postId, 
+    return this.http.post<any>(this._likeUrl, postId, 
     {
       headers: httpHeaders,
       observe: 'response'
