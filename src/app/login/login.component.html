@@ -1,3 +1,13 @@
+<div class="row" *ngIf="Iserror; then error">
+  
+</div>
+
+<ng-template #error>
+    <div class="col-4 mx-auto mt-4 alert alert-danger" role="alert">
+        {{message}}
+      </div>
+</ng-template>
+
 <div class=" pt-5">
     <div class="col-md-6 mx-auto">
       <div class="card rounded-0">
@@ -7,7 +17,7 @@
   
       
         <div class="card-body">
-
+          
 <!-- 
           <form class="form" (ngSubmit)="loginUser()">
   
@@ -30,13 +40,13 @@
 
             <div class="form-group">
               <label for="">Username</label>
-              <input type="text" formControlName="username" class="form-control rounded-0">
+              <input type="text" formControlName="username" class="form-control rounded-0" [ngClass]="{'errorOutline': Iserror == true}">
             </div>
 
 
             <div class="form-group">
               <label for="">Password</label>
-              <input type="password" formControlName="password" class="form-control rounded-0">
+              <input type="password" formControlName="password" class="form-control rounded-0"[ngClass]="{'errorOutline': Iserror == true}">
             </div>
 
             <button  type="submit" class="btn btn-primary float-right">Register</button>

@@ -28,7 +28,7 @@ export class AuthService {
   };
 
   loginUser(user) {
-    return this.http.post<any>(this.Url + "login", user);
+    return this.http.post<any>(this.Url2 + "login", user);
   };
 
   getPosts() {

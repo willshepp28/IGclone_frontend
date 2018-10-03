@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loading = false;
+  Iserror = false;
+  message;
 
   constructor(
     private _auth: AuthService,
@@ -50,7 +52,8 @@ loginUser(){
         this._router.navigate(["/home"]);
       },
       error => {
-        console.log(error);
+        this.Iserror = true;
+        this.message = "You entered the wrong email or password!"
         console.log("This is a error brah")
       }
     )

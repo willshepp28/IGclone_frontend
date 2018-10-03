@@ -157,6 +157,11 @@ a {
 }
 
 
+.errorOutline {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+
 /* Use a media query to add a breakpoint at 800px: */
 @media screen and (max-width: 446px) {
    /* body {
