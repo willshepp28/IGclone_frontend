@@ -17,8 +17,10 @@ import { AuthService } from '../../core/authentication/auth.service';
 })
 export class PostComponent implements OnInit {
 
+
   post = [];
   postLength: number;
+  userOrNot;
 
 
 
@@ -39,13 +41,16 @@ export class PostComponent implements OnInit {
       console.log("********");
 
       if (params.id === "post") {
-
+        this.userOrNot = "You";
      
         token = this.getDecodedAccessToken(localStorage.getItem('token'));
         tokenId = token.user[0].id;
         
+        
       } else {
+        this.userOrNot = "User"
         tokenId = params.id;
+        
       }
     });
 

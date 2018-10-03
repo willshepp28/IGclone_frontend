@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
   profilePic: string;
   username: string;
   show = false;
+  loadPosts = false;
 
 
   postLength: number;
@@ -84,7 +85,8 @@ export class ProfileComponent implements OnInit {
               console.log("Raise the bar")
               console.log(response)
               console.log("Raise the bar")
-                ,
+                
+            
                 this.username = response.username;
               this.profilePic = response.profilePic;
     

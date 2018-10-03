@@ -23,6 +23,10 @@ export class LoginComponent implements OnInit {
   Iserror = false;
   message;
 
+
+  // ngClass 
+  // https://stackoverflow.com/questions/35269179/angular-conditional-class-with-ngclass
+
   constructor(
     private _auth: AuthService,
     private formBuilder: FormBuilder,
@@ -31,8 +35,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(1)]]
+      username: ['', Validators.required, Validators.minLength(4)],
+      password: ['', [Validators.required, Validators.minLength(5)]]
   });
 
   this.loginForm.valueChanges.subscribe(console.log);
