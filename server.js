@@ -6,7 +6,7 @@ const path = require("path");
 application.use(express.static(__dirname + "/dist/frontend"));
 
 
-application.listen(process.env.PORT || 8080);
+
 
 
 // PathLocationStategy
@@ -14,6 +14,9 @@ application.listen(process.env.PORT || 8080);
 application.get("/*", function(request, response) {
     response.sendFile(path.join(__dirname + "/dist/frontend/index.html"));
 });
+
+
+application.listen(process.env.PORT || 8080);
 
 console.log("Server listening");
 
