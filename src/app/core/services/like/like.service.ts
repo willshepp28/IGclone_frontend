@@ -10,6 +10,7 @@ export class LikeService {
 
 
   private _likeUrl = "https://igclone-backend.herokuapp.com/api/v1/likes";
+  private _likeUrl2 = "http://localhost:3000/api/v1/likes";
   
 
   constructor(
@@ -26,7 +27,7 @@ export class LikeService {
       "Content-Type": "application/json"
     });
 
-    return this.http.post<any>(this._likeUrl, postId, 
+    return this.http.post<any>(this._likeUrl2, postId, 
     {
       headers: httpHeaders,
       observe: 'response'

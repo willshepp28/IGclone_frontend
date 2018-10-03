@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class SavedPostService {
 
   private _saveUrl = "https://igclone-backend.herokuapp.com/api/v1/savedPost";
+  private _saveUrl2 = "http://localhost:3000/api/v1/savedPost";
 
   constructor(
     private http: HttpClient
@@ -14,6 +15,7 @@ export class SavedPostService {
 
 
   savePost(postId){
+    console.log("Inside the saved post")
     let httpHeaders = new HttpHeaders({
       "Content-Type": "application/json"
     });

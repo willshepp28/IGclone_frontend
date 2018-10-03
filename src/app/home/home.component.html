@@ -18,8 +18,22 @@
           <!-- Card body -->
           <div class="card-body">
             <div class="card-body padding0">
-              <button *ngIf="!post.totalLikes" class="ig_sprites hw24 borderNone outlineNone" id="heart" (click)="LikePost(post.id)"></button>
-              <button *ngIf="post.totalLikes > 0" class="ig_sprites hw24 borderNone outlineNone" id="heart2" (click)="LikePost(post.id)"></button>
+              
+
+              <!-- <div *ngIf="isError; then noPost else post"></div>
+
+              <ng-template #noPost>
+                  <button class="ig_sprites hw24 borderNone outlineNone" id="heart" (click)="LikePost(post.id)"></button>
+              </ng-template>
+
+              <ng-template #post>
+                  <button  class="ig_sprites hw24 borderNone outlineNone" id="heart2" (click)="LikePost(post.id)"></button>
+                </ng-template>  -->
+              <button *ngIf="!post.totalLikes; else somelikes" class="ig_sprites hw24 borderNone outlineNone" id="heart" (click)="LikePost(post.id)"></button> 
+              <ng-template #somelikes>
+                  <button class="ig_sprites hw24 borderNone outlineNone" id="heart2" (click)="LikePost(post.id)"></button>
+              </ng-template>
+              <!-- <button *ngIf="post.totalLikes > 0" class="ig_sprites hw24 borderNone outlineNone" id="heart2" (click)="LikePost(post.id)"></button> -->
       
               <button class="ig_sprites hw24 borderNone outlineNone" id="comment"></button>
               <span *ngIf="!post.isSaved" class="ig_sprites hw24 borderNone outlineNone" id="save" (click)="save(post.id)"></span>

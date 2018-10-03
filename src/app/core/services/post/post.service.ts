@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class PostService {
 
   private _postUrl = 'https://igclone-backend.herokuapp.com/api/v1/posts';
+  private _postUrl2 = "http://localhost:3000/api/v1/posts";
 
   constructor(
     private http: HttpClient,
@@ -34,6 +35,8 @@ addPost(id) {
 |--------------------------------------------------------------------------
 */
 getUpdatedPost(postId){
+  console.log("inside get updated post");
+  console.log(`Post Id: ${postId}`)
   return this.http.get<any>(this._postUrl + "/update/" + postId)
 };
 

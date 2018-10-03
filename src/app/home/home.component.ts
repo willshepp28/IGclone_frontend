@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   followers = [];
   userComment;
   commentPlaceholder: string = "Add a Comment ...";
+  isError = false;
 
 
 
@@ -116,23 +117,32 @@ export class HomeComponent implements OnInit {
 
   LikePost(id) {
 
+
+
     // we add the like
     this.likeService.addLike({ id: id })
       .subscribe(
         response => {
+
+          console.log("getting something")
 
           // we get the like by passing the 
           this.postService.getUpdatedPost(id)
             .subscribe(
 
               response => {
+
+                console.log("getting something")
               
+                console.log(response);
                 console.log(response[0].totalLikes);
 
                 for(let i =0; i < this.posts.length; i++) {
                   
                   if(response[0].id === this.posts[i].id) {
-                    this.posts[i].totalLikes = response[i].totalLikes
+                    // console.log(this.posts[i].totalLikes)
+                    console.log(response[0].totalLikes)
+                    this.posts[i].totalLikes = response[0].totalLikes
                 }
               }
 
@@ -188,6 +198,7 @@ export class HomeComponent implements OnInit {
       .subscribe(
         response => {
 
+          console.log("hdfoidhfaoisfjoifjiodfjoeijf")
           // update post with new save info
           this.postService.getUpdatedPost(id)
             .subscribe(
