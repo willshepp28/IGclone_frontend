@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
   registerUserData = [];
   constructor(
     private _auth: AuthService,
-    private _router: Router,
+     private _router: Router,
     private formBuilder: FormBuilder
   ) { }
 
@@ -48,8 +48,6 @@ export class SignupComponent implements OnInit {
   this._auth.registerUser(this.registerUserForm.value)
     .subscribe(
       response => {
-
-        localStorage.setItem("token", response.token);
 
         // redirect to the login page
         this._router.navigate(["/login"])

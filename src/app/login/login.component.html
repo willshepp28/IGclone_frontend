@@ -18,22 +18,6 @@
       
         <div class="card-body">
           
-<!-- 
-          <form class="form" (ngSubmit)="loginUser()">
-  
-              <div class="form-group">
-                  <label for="">Username</label>
-                  <input [(ngModel)]="loginUserData.username" name="username" type="text" class="form-control rounded-0" required>
-                </div>
-  
-  
-            <div class="form-group">
-              <label for="">Password</label>
-              <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" required>
-            </div>
-  
-            <button (click)="loginUser()" type="button" class="btn btn-primary float-right">Register</button>
-          </form> -->
 
 
           <form [formGroup]="loginForm" class="form" (ngSubmit)="loginUser()">
@@ -49,7 +33,7 @@
               <input type="password" formControlName="password" class="form-control rounded-0"[ngClass]="{'errorOutline': Iserror == true}">
             </div>
 
-            <button  type="submit" class="btn btn-primary float-right">Register</button>
+            <button  type="submit" class="btn btn-primary float-right">Login</button>
           </form>
 
          
