@@ -5,6 +5,7 @@ import * as jwt_decode from "jwt-decode";
 
 import { AuthService } from '../core/authentication/auth.service';
 import { FollowerService } from '../core/services/follower/follower.service';
+import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -25,12 +26,14 @@ export class ExploreComponent implements OnInit {
     private authService: AuthService,
     private followService: FollowerService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private decodeToken: DecodeTokenService
   ) { }
 
   ngOnInit() {
     this.authService.discoverUsers()
       .subscribe(
+        
         response => { console.log(response), this.users = response },
         error => console.log(error)
       )
@@ -46,7 +49,8 @@ export class ExploreComponent implements OnInit {
   followUser(userId){
     console.log(`User id is : ${userId}`)
 
-    var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+    // var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+    var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem("token"));
     var tokenId = token.user[0].id;
 
     this.followService.followUser(userId)
@@ -67,13 +71,5 @@ export class ExploreComponent implements OnInit {
   }
 
 
-  getDecodedAccessToken(token: string): any {
-    try{
-        return jwt_decode(token);
-    }
-    catch(Error){
-        return null;
-    }
-  }
 
 }

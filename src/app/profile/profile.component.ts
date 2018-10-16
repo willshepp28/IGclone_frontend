@@ -68,7 +68,12 @@ export class ProfileComponent implements OnInit {
        
 
          
+          /*
+            1. We run this conditional statement to check if their is a id in the request params
+            2. if not and or the request.params is equal to the id of the currently loggin in user
+              we know that this is the loggin in user and we can show the saved posts and update properties on this user
 
+          */
           if (isNaN(theid) || theid == token.user[0].id) {
             
             // page only routing to logged in users page
