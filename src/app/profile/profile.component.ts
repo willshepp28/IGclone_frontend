@@ -6,6 +6,7 @@ import * as jwt_decode from "jwt-decode";
 
 import { TotalService } from '../core/services/total/total.service';
 import { PostService } from '../core/services/post/post.service';
+import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -44,7 +45,8 @@ export class ProfileComponent implements OnInit {
     private totalService: TotalService,
     private router: Router,
     private route: ActivatedRoute,
-    private postService: PostService
+    private postService: PostService,
+    private decodeToken: DecodeTokenService
   ) { }
 
   ngOnInit() {
@@ -52,9 +54,11 @@ export class ProfileComponent implements OnInit {
 
 
 
-    var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+    // var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+    var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem('token'));
     var tokenId;
 
+ 
 
     // using paramMap returns a observable
     this.route.paramMap
@@ -66,11 +70,11 @@ export class ProfileComponent implements OnInit {
          
 
           if (isNaN(theid) || theid == token.user[0].id) {
-            console.log("The id is not a number")
+            
             // page only routing to logged in users page
             // Because we are only getting the token and not the route params
           this.show = true;
-           token = this.getDecodedAccessToken(localStorage.getItem('token'));
+          //  token = this.getDecodedAccessToken(localStorage.getItem('token'));
            tokenId = token.user[0].id;
 
           } else {
@@ -82,10 +86,6 @@ export class ProfileComponent implements OnInit {
           this.userService.getUser(tokenId)
           .subscribe(
             response => {
-              console.log("Raise the bar")
-              console.log(response)
-              console.log("Raise the bar")
-                
             
                 this.username = response.username;
               this.profilePic = response.profilePic;
@@ -103,13 +103,7 @@ export class ProfileComponent implements OnInit {
     // var tokenId = token.user[0].id;
 
 
-
-    // console.log(token.user[0].id);
-    // console.log(localStorage.getItem('token'));
       
-    console.log("**********")
-    console.log(tokenId);
-    console.log("***********");
 
     this.totalService.getNumberOfPosts(tokenId)
       .subscribe(
@@ -127,7 +121,7 @@ export class ProfileComponent implements OnInit {
 
     this.totalService.getUserWhereFollower(tokenId)
       .subscribe(
-        response => { this.userInfo.followerAmount = parseInt(response), console.log(this.userInfo) },
+        response => { this.userInfo.followerAmount = parseInt(response) },
         error => console.log(error)
       )
 
@@ -153,15 +147,6 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['saved'], { relativeTo: this.route })
   }
 
-
-  getDecodedAccessToken(token: string): any {
-    try {
-      return jwt_decode(token);
-    }
-    catch (Error) {
-      return null;
-    }
-  }
 
 
 

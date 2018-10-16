@@ -11,7 +11,7 @@ import { CommentService } from '../core/services//comments/comment.service';
 import { FollowerService } from '../core/services//follower/follower.service';
 import { SavedPostService } from '../core/services/saved-post/saved-post.service';
 import { PostService } from '../core/services/post/post.service';
-
+import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -49,7 +49,8 @@ export class HomeComponent implements OnInit {
     private savePostService: SavedPostService,
     private postService: PostService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private decodeToken: DecodeTokenService
   ) { }
 
   ngOnInit() {

@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 
 
+
 import { SavedPostService } from '../../core/services/saved-post/saved-post.service';
+import { DecodeTokenService } from "../../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -22,13 +24,18 @@ export class SavedComponent implements OnInit {
 
   constructor(
     private saveService: SavedPostService,
-    private router: Router
+    private router: Router,
+    private decodeToken: DecodeTokenService
   ) { }
 
   ngOnInit() {
-    var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+  
+    // Decode the token to get the user id
+    var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem("token"));
     var tokenId = token.user[0].id;
 
+
+    // then past the userid to get all users the posts that users have saved
     this.saveService.getUsersSavedPost(tokenId)
       .subscribe(
         response => { console.log(response), this.savedPost = response, this.savedPostLength = this.savedPost.length},
@@ -40,13 +47,6 @@ export class SavedComponent implements OnInit {
     this.router.navigate(['/post', postId])
   }
 
-  getDecodedAccessToken(token: string): any {
-    try{
-        return jwt_decode(token);
-    }
-    catch(Error){
-        return null;
-    }
-  }
+
 
 }
