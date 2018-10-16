@@ -4,6 +4,7 @@ import * as jwt_decode from "jwt-decode";
 
 
 import { AuthService } from '../../core/authentication/auth.service';
+import { DecodeTokenService } from "../../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -27,7 +28,8 @@ export class PostComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private decodeToken: DecodeTokenService
   ) { }
 
   ngOnInit() {
@@ -36,14 +38,13 @@ export class PostComponent implements OnInit {
     var tokenId;
 
     this.route.parent.params.subscribe(params => {
-      console.log(`******* /profile/${params.id}`);
-      console.log(params);
-      console.log("********");
+   
 
       if (params.id === "post") {
         this.userOrNot = "You";
      
-        token = this.getDecodedAccessToken(localStorage.getItem('token'));
+        // decode token to get the user id
+        token = this.decodeToken.getDecodedAccessToken(localStorage.getItem("token"));
         tokenId = token.user[0].id;
         
         
@@ -55,11 +56,7 @@ export class PostComponent implements OnInit {
     });
 
 
-
-    console.log("inside post")
-    console.log(tokenId);
-    console.log("inside post")
-
+    // then pass the user id to get all the users posts
     this.auth.getAllUserPosts(tokenId)
       .subscribe(
 
@@ -71,16 +68,6 @@ export class PostComponent implements OnInit {
 
   selectPost(postId) {
     this.router.navigate(['/post', postId])
-  }
-
-
-  getDecodedAccessToken(token: string): any {
-    try {
-      return jwt_decode(token);
-    }
-    catch (Error) {
-      return null;
-    }
   }
 
 
