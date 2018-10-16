@@ -64,7 +64,6 @@ export class HomeComponent implements OnInit {
           // console.log(response),
             this.posts = response,
             this.postLength = this.posts.length
-            console.log(this.posts);
         },
         error => {
           if (error instanceof HttpErrorResponse) {
@@ -86,11 +85,8 @@ export class HomeComponent implements OnInit {
 
 
     if (event.keyCode == 13) {
-      console.log(event.target.value);
+  
       event.preventDefault();
-      console.log("Yup you pressed enter");
-      console.log(`Event:  ${event}`)
-      console.log(`PostID: ${postId}`)
 
       this.commentService.addComment({ id: postId, comment: event.target.value })
         .subscribe(
@@ -101,7 +97,8 @@ export class HomeComponent implements OnInit {
                 response => {
                   this.posts = response,
                     this.postLength = this.posts.length
-                  // this.commentPlaceholder = "Add a Comment...."
+                  
+                    // reset input value
                   event.target.value = " ";
                 },
                 error => console.log(error)
@@ -132,44 +129,13 @@ export class HomeComponent implements OnInit {
 
               response => {
 
-                console.log("getting something")
-              
-                console.log(response);
-                console.log(response[0].totalLikes);
-
                 for(let i =0; i < this.posts.length; i++) {
                   
                   if(response[0].id === this.posts[i].id) {
-                    // console.log(this.posts[i].totalLikes)
-                    console.log(response[0].totalLikes)
+                    
                     this.posts[i].totalLikes = response[0].totalLikes
                 }
               }
-
-                // for(let i = 0; i < this.posts.length; i++) {
-
-                //   if(response[0].id === this.posts[i].id) {
-
-
-                //     if(this.posts[i].isSaved) {
-                //       this.posts[i].isSaved = false;
-
-                //     } else {
-                //       this.posts[i].isSaved = true;
-                //     }
-
-
-                //     // console.log("*******_______********")
-                //     // console.log(response[0].isSaved)
-                //     // console.log("*******_______********")
-                //     // this.posts[i].isSaved = response[0].isSaved
-                //   }
-                // }
-
-
-                // console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
-                // console.log(this.posts[0])
-                // console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
                 
               },
               error => {
@@ -217,56 +183,13 @@ export class HomeComponent implements OnInit {
                       this.posts[i].isSaved = true;
                     }
 
-                    console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
-                    console.log(this.posts[0])
-                    console.log(`CHECKING POST AFTER THE POST is ${this.posts[0].isSaved}`)
-
-
-                    // console.log("*******_______********")
-                    // console.log(response[0].isSaved)
-                    // console.log("*******_______********")
-                    // this.posts[i].isSaved = response[0].isSaved
                   }
                 }
-
-
-
-                // for(let i = 0; i < this.posts.length; i++) {
-
-                //   if(response[0].id === this.posts[i].id) {
-
-
-                //     if(this.posts[i].isSaved) {
-                //       this.posts[i].isSaved = false;
-
-                //     } else {
-                //       this.posts[i].isSaved = true;
-                //     }
-
-
-                //     // console.log("*******_______********")
-                //     // console.log(response[0].isSaved)
-                //     // console.log("*******_______********")
-                //     // this.posts[i].isSaved = response[0].isSaved
-                //   }
-                // }
               }
             )
         }
       )
 
-    // this.savePostService.savePost({ id: id })
-    //   .subscribe(
-    //     response => {
-
-    //       // Update post with new save
-    //       this.authService.getPosts()
-    //         .subscribe(
-    //           response => { console.log(response), this.posts = response },
-    //           error => console.log(error)
-    //         )
-    //     }
-    //   )
   }
 
  

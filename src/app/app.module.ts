@@ -15,6 +15,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { PostComponent as OnePostComponent } from "./post/post.component";
 
 
+// Services
 import { AuthService } from './core/authentication/auth.service';
 import { AuthGuard } from './core/guards/auth-guard/auth.guard';
 import { TokenInterceptorService } from './core/interceptors/token-interceptor/token-interceptor.service';
@@ -27,6 +28,10 @@ import { SavedComponent } from './profile/saved/saved.component';
 import { PostService } from './core/services/post/post.service';
 import { AddPostComponent } from './profile/add-post/add-post.component';
 import { ChangeProfilePicComponent } from './profile/change-profile-pic/change-profile-pic.component';
+
+
+// Helpers
+import { DecodeTokenService } from "./core/helper/decodeToken/decode-token.service";
 
 
 
@@ -54,7 +59,15 @@ import { ChangeProfilePicComponent } from './profile/change-profile-pic/change-p
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard, LikeService, CommentService, FollowerService, SavedPostService, PostService,
+  providers: [
+    AuthService, 
+    AuthGuard, 
+    LikeService, 
+    CommentService, 
+    FollowerService, 
+    SavedPostService, 
+    PostService,
+    DecodeTokenService,
     {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

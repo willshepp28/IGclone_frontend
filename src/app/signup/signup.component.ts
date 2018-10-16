@@ -45,6 +45,7 @@ export class SignupComponent implements OnInit {
       return;
   }
 
+  
   this._auth.registerUser(this.registerUserForm.value)
     .subscribe(
       response => {
@@ -57,19 +58,5 @@ export class SignupComponent implements OnInit {
     )
   }
 
-  // registerUser() {
-  //  this._auth.registerUser(this.registerUserData)
-  //  .subscribe(
-  //    response => { 
-       
-  //     console.log("issa success") 
-  //     console.log( response )
-  //     localStorage.setItem('token', response.token);
-  //     this._router.navigate(["/login"]);
-
-  //     error => { console.log("issa error") ,console.log( error )}
-  //   }
-  //  );
-  // }
 
 }
