@@ -5,6 +5,7 @@ import * as jwt_decode from "jwt-decode";
 
 import { AuthService } from '../../core/authentication/auth.service';
 import { DecodeTokenService } from "../../core/helper/decodeToken/decode-token.service";
+import { PostService } from '../../core/services/post/post.service';
 
 
 
@@ -27,6 +28,7 @@ export class PostComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
+    private postService: PostService,
     private router: Router,
     private route: ActivatedRoute,
     private decodeToken: DecodeTokenService
@@ -40,6 +42,7 @@ export class PostComponent implements OnInit {
     this.route.parent.params.subscribe(params => {
    
 
+      // Checks to see if this is the user or not
       if (params.id === "post") {
         this.userOrNot = "You";
      
@@ -57,7 +60,7 @@ export class PostComponent implements OnInit {
 
 
     // then pass the user id to get all the users posts
-    this.auth.getAllUserPosts(tokenId)
+    this.postService.getAllUserPosts(tokenId)
       .subscribe(
 
         response => { console.log(response), this.post = response, this.postLength = this.post.length },

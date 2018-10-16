@@ -60,10 +60,6 @@ export class AuthService {
   return this.http.get<any>(`${this.Url}posts/${id}`)
  }
 
- getAllUserPosts(id){
-  return this.http.get<any>(`${this.Url}posts/all/${id}`)
- }
-  
  
 }
 
