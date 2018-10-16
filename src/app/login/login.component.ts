@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
 
 loginUser(){
 
-  console.log(this.loginForm.value);
-  
+  // We pass the loginForm.value to authenticate the user
+  // If successufl we set the token and redirect the user to the /home page
   this._auth.loginUser(this.loginForm.value)
     .subscribe(
       response => {
@@ -62,20 +62,6 @@ loginUser(){
       }
     )
 }
-
-
-
-  // loginUser() {
-  //   this._auth.loginUser(this.loginUserData)
-  //   .subscribe(
-  //       response => {
-  //         localStorage.setItem("token", response.token);
-  //         // console.log(response);
-  //         this._router.navigate(["/home"])
-  //       },
-  //       error => console.log( error )
-  //     )
-  // }
 
   
 
