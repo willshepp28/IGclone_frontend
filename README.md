@@ -1,27 +1,66 @@
-# Frontend
+# Instagram Clone (frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
-## Development server
+----
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**What is this?** 
 
-## Code scaffolding
+This is my own version of instagram.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Technologies Used
 
-## Running unit tests
+```js
+ Bootstrap
+ Express
+ Angular 6
+ Knex/ PostgreSQL
+ AWS S3
+ 
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Site Layout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ ### Desktop Layout
+
+ Sign Up            |  Login
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png)
+
+
+### Tablet Layout
+
+
+### Mobile Layout
+
+## Features
+
+  * Upload/ Delete Media (photos)
+  * Registration
+  * Send Direct Messages
+  * Search
+  * News Feed
+  * Ability to Follow/ Unfollow
+  * Like Content
+  * Search & Iterate for Location, Users, Hashtags
+
+
+  ## Requirements
+
+  - [X] User should be able to register
+  - [X] User should be able to login
+  - [X] User should be able to post content
+  - User should only be able to see the posts of users that they are following
+  - [X] Users should be able to see their own profile page
+  - [X] Users should be able to see the profile pictures of others users
+  - Users should can go see other profile pictures, but wont be able to actually see the posts of users they arent following.
+  - Users should be able to search for content associated with certain tags
+  - [X]  Users should be able to like post
+  - [X] Users should be able to unlike posts
+  - [X]  Users should only get be able to like one time per post
+  - [X]  Users should be able to comment on posts
