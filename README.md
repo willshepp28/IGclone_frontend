@@ -30,7 +30,7 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-<img height="350px" 5px src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
@@ -46,16 +46,16 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-signup.png =100x20)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-login.png =100x20)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-signup.png">  |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-login.png"> 
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-home.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-profile.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-profile.png"> 
 
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-post%3Aid.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-explore.png">   |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-post%3Aid.png"> 
 
 
 ### Mobile Layout
