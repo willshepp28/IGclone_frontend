@@ -52,9 +52,7 @@ export class ExploreComponent implements OnInit {
 */  
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    event.target.innerWidth;
-    console.log(event.target.innerWidth);
-
+    
     if (event.target.innerWidth >= 595 && this.displayDiscoverSection === false) {
       this.displayDiscoverSection = true;
     }
@@ -63,6 +61,8 @@ export class ExploreComponent implements OnInit {
       this.displayDiscoverSection = false;
     }
   }
+
+  
 
   ngOnInit() {
 

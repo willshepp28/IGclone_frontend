@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { UserService } from '../core/services/user/user.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import * as jwt_decode from "jwt-decode";
 
 
 import { TotalService } from '../core/services/total/total.service';
@@ -47,6 +46,12 @@ export class ProfileComponent implements OnInit {
     private postService: PostService,
     private decodeToken: DecodeTokenService
   ) { }
+
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+     console.log(event);
+  }
 
   ngOnInit() {
 
@@ -132,6 +137,11 @@ export class ProfileComponent implements OnInit {
 
   }
 
+
+  ngOnDestroy(){
+    
+    document.title = "Instagram"; // when user leaves profile component, we change the titlebar back to instagram
+ } 
 
 
   showAddPost() {
