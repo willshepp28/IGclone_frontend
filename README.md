@@ -72,7 +72,7 @@ This is my own version of instagram.
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore%3Aid.png)
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-post%3Aid.png)
 
 ## Features
 
