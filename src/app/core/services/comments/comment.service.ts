@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -15,22 +14,29 @@ import { map } from 'rxjs/operators';
 export class CommentService {
 
 
-  private _commentUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
-  private _commentUrl2 = "http://localhost:3000/api/v1/comments";
+  private commentUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
+  private commentUrl2 = "http://localhost:3000/api/v1/comments";
 
   constructor(
-    private http: HttpClient,
-    private router: Router
+    private http: HttpClient
   ) { }
 
-
+/*
+|--------------------------------------------------------------------------
+| POST - Add a new comment
+|--------------------------------------------------------------------------
+*/
   addComment(comment){
-    console.log(comment);
-    return this.http.post<any>(this._commentUrl, comment)
+    return this.http.post<any>(this.commentUrl, comment)
   }
 
 
+/*
+|--------------------------------------------------------------------------
+| GET - gets all comments on one post
+|--------------------------------------------------------------------------
+*/
   getAllPostsOnAComment(postId){
-    return this.http.get<any>(`${this._commentUrl}/${postId}`)
+    return this.http.get<any>(`${this.commentUrl}/${postId}`)
   }
 }

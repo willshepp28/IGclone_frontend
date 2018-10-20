@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
 
 
 
-    this.authService.getPosts()
+    this.postService.getPosts()
       .subscribe(
         response => {
           // console.log(response),
@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
         .subscribe(
           response => {
 
-            this.authService.getPosts()
+            this.postService.getPosts()
               .subscribe(
                 response => {
                   this.posts = response,
@@ -159,13 +159,11 @@ export class HomeComponent implements OnInit {
 
   save(id) {
 
-    console.log(id);
-
     this.savePostService.savePost({ id: id })
       .subscribe(
         response => {
 
-          console.log("hdfoidhfaoisfjoifjiodfjoeijf")
+    
           // update post with new save info
           this.postService.getUpdatedPost(id)
             .subscribe(

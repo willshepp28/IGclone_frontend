@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FollowerService {
 
-  
+
 
   constructor(
     private http: HttpClient
@@ -17,9 +17,12 @@ export class FollowerService {
     return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/${token}`);
   }
 
+  
+/*
+ *  we need the token to see who the currently logged in user is
+ *  and we need userId to see who the logged in user is requesting to follow
+ */
   followUser(userId){
-    // we need the token to see who the currently logged in user is
-    // and we need userId to see who the logged in user is requesting to follow
     return this.http.post<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/sendRequest/${userId}`, userId);
   }
 

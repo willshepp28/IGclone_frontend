@@ -8,6 +8,7 @@ import { FollowerService } from '../core/services/follower/follower.service';
 import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
 import { UserService } from '../core/services/user/user.service';
 import { PostService } from '../core/services/post/post.service';
+import { DiscoverService } from '../core/services/discover/discover.service';
 
 
 
@@ -31,11 +32,12 @@ export class ExploreComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private decodeToken: DecodeTokenService,
-    private userService: UserService
+    private userService: UserService,
+    private discoverService: DiscoverService
   ) { }
 
   ngOnInit() {
-    this.userService.discoverUsers()
+    this.discoverService.discoverUsers()
       .subscribe(
         
         response => { console.log(response), this.users = response },
@@ -43,7 +45,7 @@ export class ExploreComponent implements OnInit {
       )
 
       // This gets all the users post in IG_Clone
-    this.postService.getDiscoverPosts()
+    this.discoverService.getDiscoverPosts()
       .subscribe(
         response => { console.log(response), this.posts = response},
         error => console.log(error)
