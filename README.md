@@ -46,7 +46,7 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-signup.png  =100x)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-login.png  =100x)
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-signup.png =100x20)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-login.png =100x20)
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
