@@ -30,16 +30,16 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-<img height="350px" margin-right: 5px src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
+<img height="350px" 5px src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-home.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile.png">
 
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile%3Aid.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile%3Aid.png">
 
 
 ### Tablet Layout
