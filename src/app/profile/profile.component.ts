@@ -20,7 +20,6 @@ import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.serv
 })
 export class ProfileComponent implements OnInit {
 
-  burr = "jdlfjdkfjdklsfjdlk";
 
   profilePic: string;
   username: string;

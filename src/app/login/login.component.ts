@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+// Services
 import { AuthService } from '../core/authentication/auth.service';
 
 
@@ -19,18 +20,18 @@ export class LoginComponent implements OnInit {
   loginUserData = {};
 
   loginForm: FormGroup;
-  loading = false;
-  Iserror = false;
-  message;
+  loading: boolean = false;
+  Iserror: boolean = false;
+  message: string;
 
 
   // ngClass 
   // https://stackoverflow.com/questions/35269179/angular-conditional-class-with-ngclass
 
   constructor(
-    private _auth: AuthService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
-    private _router: Router
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -47,13 +48,13 @@ loginUser() {
 
   // We pass the loginForm.value to authenticate the user
   // If successufl we set the token and redirect the user to the /home page
-  this._auth.loginUser(this.loginForm.value)
+  this.authService.loginUser(this.loginForm.value)
     .subscribe(
       response => {
         localStorage.setItem("token", response.token);
 
         // redirect /home
-        this._router.navigate(["/home"]);
+        this.router.navigate(["/home"]);
       },
       error => {
         this.Iserror = true;

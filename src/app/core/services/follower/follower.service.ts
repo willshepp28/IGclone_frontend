@@ -17,21 +17,31 @@ export class FollowerService {
     return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/${token}`);
   }
 
-  
+
 /*
- *  we need the token to see who the currently logged in user is
- *  and we need userId to see who the logged in user is requesting to follow
- */
+|--------------------------------------------------------------------------
+| POST - made when loggin in user, makes a request to follow another user
+|--------------------------------------------------------------------------
+*/
   followUser(userId){
     return this.http.post<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/sendRequest/${userId}`, userId);
   }
 
-
+/*
+|--------------------------------------------------------------------------
+| POST - accepts follow requests, made by other users
+|--------------------------------------------------------------------------
+*/
   acceptFollowRequest(id){
     return this.http.post<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/acceptRequest`, id)
   }
 
 
+/*
+|--------------------------------------------------------------------------
+| POST - denies follow requests, made by other users
+|--------------------------------------------------------------------------
+*/  
   denyFollowRequest(id){
     return this.http.post<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/denyRequest`, id)
   }

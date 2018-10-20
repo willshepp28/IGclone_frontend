@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-
-import { PostService } from '../core/services/post/post.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+
+// Services
+import { PostService } from '../core/services/post/post.service';
 import { CommentService } from '../core/services/comments/comment.service';
 
 
@@ -37,9 +37,6 @@ export class PostComponent implements OnInit {
       .subscribe(
         (params: ParamMap) => {
           let theid = parseInt(params.get('id'));
-          console.log(theid);
-
-          console.log(`The post id is : ${theid}`)
           this.id = theid;
 
           this.postService.getPost(theid)
@@ -66,13 +63,8 @@ export class PostComponent implements OnInit {
           }
         )
     
-    console.log(`The ID: ${this.id}`);
   }
 
-
-  askMe() {
-    console.log("Please dont ask me questions");
-  };
 
 
 }

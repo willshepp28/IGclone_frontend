@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import * as jwt_decode from "jwt-decode";
 
-
+// Services
 import { AuthService } from './core/authentication/auth.service';
 import { FollowerService } from './core/services/follower/follower.service';
+import { DecodeTokenService } from './core/helper/decodeToken/decode-token.service';
 
 
 
@@ -17,25 +16,31 @@ import { FollowerService } from './core/services/follower/follower.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
   
-  followRequests = [];
+  followRequests: any[] = [];
   followRequestLength: number;
 
   constructor(
-    private router: Router,
-    private _authService: AuthService,
-    private _followService: FollowerService
+    private authService: AuthService,
+    private followService: FollowerService,
+    private decodeToken: DecodeTokenService
   ){}
 
 
+
+
+/*
+|--------------------------------------------------------------------------
+| GET - gets the total number of posts a user has made
+|--------------------------------------------------------------------------
+*/
   getFollowers(){
-    // get userId
-    var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+   
+    var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem("token"));
     var tokenId = token.user[0].id;
 
 
-    this._followService.getFollowers(tokenId)
+    this.followService.getFollowers(tokenId)
       .subscribe(
         response => { console.log(response), this.followRequests = response, this.followRequestLength = this.followRequests.length},
         error => console.log(error)
@@ -43,17 +48,22 @@ export class AppComponent {
   }
 
 
+/*
+|--------------------------------------------------------------------------
+| POST - approves a follow request from another user.
+|--------------------------------------------------------------------------
+*/
   approveRequest(followerId){
     
-    this._followService.acceptFollowRequest({id: followerId})
+    this.followService.acceptFollowRequest({id: followerId})
       .subscribe(
         response => { 
 
-          var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+          var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem('token'));
           var tokenId = token.user[0].id;
 
           
-         this._followService.getFollowers(tokenId)
+         this.followService.getFollowers(tokenId)
           .subscribe(
             response => { console.log(response), this.followRequests = response, this.followRequestLength = this.followRequests.length},
             error => console.log(error)
@@ -62,21 +72,25 @@ export class AppComponent {
         error => console.log(error)
       )
   }
-
+  
   
 
+/*
+|--------------------------------------------------------------------------
+| POST - denies a follow request, from another user.
+|--------------------------------------------------------------------------
+*/
   denyRequest(followerId){
 
-    
-    this._followService.denyFollowRequest({id: followerId})
+    this.followService.denyFollowRequest({id: followerId})
       .subscribe(
         response => { 
 
-          var token = this.getDecodedAccessToken(localStorage.getItem('token'));
+          var token = this.decodeToken.getDecodedAccessToken(localStorage.getItem('token'));
           var tokenId = token.user[0].id;
 
           
-         this._followService.getFollowers(tokenId)
+         this.followService.getFollowers(tokenId)
           .subscribe(
             response => { console.log(response), this.followRequests = response, this.followRequestLength = this.followRequests.length},
             error => console.log(error)
@@ -88,20 +102,16 @@ export class AppComponent {
   
 
 
-  getDecodedAccessToken(token: string): any {
-    try{
-        return jwt_decode(token);
-    }
-    catch(Error){
-        return null;
-    }
-  }
-
-
+/*
+|--------------------------------------------------------------------------
+| Check is user is logged in or not
+|   * used for knowing when to
+      display login/login or user account info, in the navbar.
+|--------------------------------------------------------------------------
+*/
   isAuthenticated(): boolean{
     
-    if(this._authService.loggedIn()) {
-      // console.log(localStorage.getItem('token'))
+    if(this.authService.loggedIn()) {
       return true;
     } else {
       return false;
@@ -109,13 +119,6 @@ export class AppComponent {
   }
 
 
-  clear(){
-    localStorage.clear();
-  }
-
-  showToken(){
-    return localStorage.getItem('token');
-  }
 
  
 

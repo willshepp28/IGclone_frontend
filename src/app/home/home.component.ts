@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import * as jwt_decode from "jwt-decode";
 import { Observable } from 'rxjs';
 
-
+// Services
 import { AuthService } from '../core/authentication/auth.service';
 import { LikeService } from '../core/services/like/like.service';
 import { CommentService } from '../core/services//comments/comment.service';
@@ -17,6 +16,7 @@ import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.serv
 
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -24,19 +24,14 @@ import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.serv
 })
 export class HomeComponent implements OnInit {
 
-  posts = [];
+  posts: any[] = [];
   postLength: number;
-  comments = [];
-  followers = [];
+  comments: any[] = [];
+  followers: any[] = [];
   userComment;
   commentPlaceholder: string = "Add a Comment ...";
-  isError = false;
-
-
-
+  isError: boolean = false;
   postSaved: boolean = false;
-
-
   private _likeUrl = "http://localhost:3000/api/v1/likes";
 
 
@@ -53,10 +48,9 @@ export class HomeComponent implements OnInit {
     private decodeToken: DecodeTokenService
   ) { }
 
+
+
   ngOnInit() {
-
-
-
 
 
     this.postService.getPosts()
@@ -76,11 +70,16 @@ export class HomeComponent implements OnInit {
         }
       )
 
-
-
   }
 
 
+/*
+|--------------------------------------------------------------------------
+| POST - post method to add a comment to a post.
+|   * event parameter - how we get the keycode when user presses enter
+|   * postId paremeter - how we get the post.id the user posted comment
+|--------------------------------------------------------------------------
+*/
   submit(event, postId) {
     // https://stackoverflow.com/questions/37577919/angular2-submit-form-by-pressing-enter-without-submit-button
 
@@ -112,9 +111,13 @@ export class HomeComponent implements OnInit {
   }
 
 
-
+/*
+|--------------------------------------------------------------------------
+| POST - post method to like a post
+|   * id parameter - 
+|--------------------------------------------------------------------------
+*/
   LikePost(id) {
-
 
 
     // we add the like
@@ -157,6 +160,12 @@ export class HomeComponent implements OnInit {
   }
 
 
+ /*
+|--------------------------------------------------------------------------
+| POST - post method to save a post
+|   * id parameter - 
+|--------------------------------------------------------------------------
+*/
   save(id) {
 
     this.savePostService.savePost({ id: id })
@@ -192,17 +201,6 @@ export class HomeComponent implements OnInit {
   }
 
  
-
-
-
-  getDecodedAccessToken(token: string): any {
-    try {
-      return jwt_decode(token);
-    }
-    catch (Error) {
-      return null;
-    }
-  }
 
 
 

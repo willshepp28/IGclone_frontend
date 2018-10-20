@@ -3,12 +3,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 
 
-import { AuthService } from '../core/authentication/auth.service';
+// Services
 import { FollowerService } from '../core/services/follower/follower.service';
-import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
-import { UserService } from '../core/services/user/user.service';
-import { PostService } from '../core/services/post/post.service';
 import { DiscoverService } from '../core/services/discover/discover.service';
+
+
+// Helpers
+import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
 
 
 
@@ -22,17 +23,14 @@ import { DiscoverService } from '../core/services/discover/discover.service';
 })
 export class ExploreComponent implements OnInit {
 
-  users = [];
-  posts = [];
+  users: any[] = [];
+  posts: any[] = [];
 
   constructor(
-    private authService: AuthService,
-    private postService: PostService,
-    private followService: FollowerService,
     private route: ActivatedRoute,
     private router: Router,
+    private followService: FollowerService,
     private decodeToken: DecodeTokenService,
-    private userService: UserService,
     private discoverService: DiscoverService
   ) { }
 
@@ -65,11 +63,6 @@ export class ExploreComponent implements OnInit {
         response => { console.log(response)},
         error => console.log(error)
       )
-  }
-
-
-  logData(id) {
-    console.log(`POST ID: ${id}`);
   }
 
 

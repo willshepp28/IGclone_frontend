@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
+// Services
 import { AuthService } from '../core/authentication/auth.service';
 
 
@@ -17,14 +17,19 @@ import { AuthService } from '../core/authentication/auth.service';
 })
 export class SignupComponent implements OnInit {
 
-  registerUserForm: FormGroup
+  registerUserForm: FormGroup;
+  registerUserData: any[] = [];
 
-  registerUserData = [];
+
+
   constructor(
-    private _auth: AuthService,
-     private _router: Router,
+    private authService: AuthService,
+    private router: Router,
     private formBuilder: FormBuilder
   ) { }
+
+
+
 
   ngOnInit() {
 
@@ -38,20 +43,18 @@ export class SignupComponent implements OnInit {
 
   registerUser(){
 
-    console.log(this.registerUserForm.value)
-
      // stop here if form is invalid
      if (this.registerUserForm.invalid) {
       return;
   }
 
   
-  this._auth.registerUser(this.registerUserForm.value)
+  this.authService.registerUser(this.registerUserForm.value)
     .subscribe(
       response => {
 
         // redirect to the login page
-        this._router.navigate(["/login"])
+        this.router.navigate(["/login"])
       },
 
       error => console.log(error)
