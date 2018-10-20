@@ -91,6 +91,7 @@ export class ProfileComponent implements OnInit {
           .subscribe(
             response => {
             
+                document.title = "@" +response.username + " • Instagram";
                 this.username = response.username;
               this.profilePic = response.profilePic;
     
