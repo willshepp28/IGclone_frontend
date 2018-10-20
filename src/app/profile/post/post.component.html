@@ -1,13 +1,13 @@
 
 <div class="row bt-grey" *ngIf="postLength">
-    <div class="col-lg-4 col-sm-4 col-4 pt-5" *ngFor="let post of post">
+    <div class="col-lg-4 col-sm-4 col-4 pt-5 mx-auto" *ngFor="let post of post">
         <div *ngIf="!post">
             <p>No posts yet</p>
         </div>
 
         <div *ngIf="post">
             <a routerLink=""></a>
-            <img src="{{post.photo}}" alt="" class="img-responsive" style="width:100%" (click)="selectPost(post.id)">
+            <img src="{{post.photo}}" alt="" class="img-responsive" style="width:80%; height: 80%;" (click)="selectPost(post.id)">
         </div>
 
     </div>

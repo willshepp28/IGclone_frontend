@@ -3,10 +3,23 @@
     border-bottom: 1px solid #efefef;
 }
 
+.mb-25 {
+    margin-bottom: 25px;
+}
+
 .mb-50 {
     margin-bottom: 50px;
 }
 
 .mb-80 {
     margin-bottom: 80px;
+}
+
+.comments p {
+    font-size: 12px;
+}
+
+.post-header {
+    border-bottom: 1px solid rgb(239, 239, 239);
+    padding: 10px;
 }

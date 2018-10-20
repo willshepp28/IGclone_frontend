@@ -1,22 +1,22 @@
 
 
-<div class="row" *ngFor="let post of post">
+<div class="row mt-3" *ngFor="let post of post">
   <!-- Get photo associaited with this post -->
   <div class="col-6">
-    <img src="{{post.photo}}" alt="" style="width: 50vw">
+    <img src="{{post.photo}}" class="img-responsive" alt="" style="width: 100%; border-radius: 3px;">
   </div>
 
   <!-- Get user info and comments associated with this post -->
   <div class="col-6">
      
-    <div class="row bottomBorder mb-50">
-      <div class="col"><img src="{{ post.profilePic}}" alt="" class="rounded-circle" style="height: 40px;"></div>
-      <div class="col"><p>{{ post.username}}</p></div>
+    <div class="row bottomBorder mb-25 post-header">
+      <div class="col-4"><img src="{{ post.profilePic}}" alt="" class="rounded-circle" style="height: 40px;"></div>
+      <div class="col-8"><strong>{{ post.username}}</strong></div>
       <hr>
     </div>
 
 
-   <div class="mb-80">
+   <div class="mb-25">
      <a href="/profile/{{post.mainUserId}}"><strong>{{post.username}} - </strong></a><span>{{post.caption}}</span>
    </div>
 

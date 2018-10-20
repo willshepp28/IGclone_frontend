@@ -5,7 +5,7 @@
 
 
   <div class="row mx-auto nowrap" [hidden]="!displayDiscoverSection">
-    <div *ngFor="let user of users" class="card discover-card" style="margin-left:25px; padding:20px">
+    <div *ngFor="let user of users" class="card discover-card col-md-4" style="margin-left:25px; padding:20px;">
 
       <a routerLink="/profile/{{user.id}}/post" class="mx-auto"><img class="card-img-top img-responsive rounded-circle" src="{{user.profilePic}}" style="height: 78px; width: 78px; margin:0 auto" alt="Card image cap"></a>
     
@@ -24,8 +24,8 @@
 
 
   <div class="row bt-grey pointer">
-    <div class="col-4 mt-5" *ngFor="let post of posts">
-        <img src="{{post.photo}}" class="postImg img-responsive" alt="posts of new users" style="width:100%" (click)="selectPost(post.id)">
+    <div class="col-4 mb-3" *ngFor="let post of posts">
+        <img src="{{post.photo}}" class="postImg img-responsive" alt="posts of new users" style="width:100%; height: 100%;" (click)="selectPost(post.id)">
       </div>
   </div>
   
