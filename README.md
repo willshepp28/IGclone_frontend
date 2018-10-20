@@ -63,16 +63,16 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-signup.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-login.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-signup.png">  |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-login.png"> 
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-profile.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-pr.png"> 
 
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-post%3Aid.png)
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-post%3Aid.png"> 
 
 ## Features
 
