@@ -25,7 +25,7 @@
 
   <div class="row bt-grey pointer">
     <div class="col-sm-12 col-md-4 pt-5" *ngFor="let post of posts">
-        <img src="{{post.photo}}" class="postImg" alt="" style="height: 300px; width: 300px;" (mouseenter)="logData(post.id)" (click)="selectPost(post.id)">
+        <img src="{{post.photo}}" class="postImg" alt="" style="height: 300px; width: 300px;" (click)="selectPost(post.id)">
       </div>
   </div>
   
