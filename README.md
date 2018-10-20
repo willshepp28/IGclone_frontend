@@ -44,8 +44,35 @@ This is my own version of instagram.
 
 ### Tablet Layout
 
+ Sign Up            |  Login
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-signup.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-login.png)
+
+ Home           |  Profile
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-home.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-profile.png)
+
+
+ Explore         |  Post/:id
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-post%3Aid.png)
+
 
 ### Mobile Layout
+
+
+ Sign Up            |  Login
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-signup.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-login.png)
+
+ Home           |  Profile
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-profile.png)
+
+
+ Explore         |  Post/:id
+:-------------------------:|:-------------------------:
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore%3Aid.png)
 
 ## Features
 
