@@ -67,7 +67,7 @@ This is my own version of instagram.
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-pr.png"> 
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-profile.png"> 
 
 
  Explore         |  Post/:id
