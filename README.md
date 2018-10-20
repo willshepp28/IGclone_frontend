@@ -39,7 +39,7 @@ This is my own version of instagram.
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-post/id.png)
+![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png)  |  ![](https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-post:id.png)
 
 
 ### Tablet Layout
