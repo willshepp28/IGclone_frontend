@@ -47,9 +47,7 @@ export class AuthService {
     return localStorage.getItem('token');
   };
 
-  discoverUsers(){
-    return this.http.get<any>(this.Url + "users");
-  };
+
 
   getPost(){
     return this.http.get<any>(this.Url + "post");

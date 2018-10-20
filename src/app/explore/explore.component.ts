@@ -6,6 +6,8 @@ import * as jwt_decode from "jwt-decode";
 import { AuthService } from '../core/authentication/auth.service';
 import { FollowerService } from '../core/services/follower/follower.service';
 import { DecodeTokenService } from "../core/helper/decodeToken/decode-token.service";
+import { UserService } from '../core/services/user/user.service';
+import { PostService } from '../core/services/post/post.service';
 
 
 
@@ -24,21 +26,24 @@ export class ExploreComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private postService: PostService,
     private followService: FollowerService,
     private route: ActivatedRoute,
     private router: Router,
-    private decodeToken: DecodeTokenService
+    private decodeToken: DecodeTokenService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
-    this.authService.discoverUsers()
+    this.userService.discoverUsers()
       .subscribe(
         
         response => { console.log(response), this.users = response },
         error => console.log(error)
       )
 
-    this.authService.getPost()
+      // This gets all the users post in IG_Clone
+    this.postService.getDiscoverPosts()
       .subscribe(
         response => { console.log(response), this.posts = response},
         error => console.log(error)

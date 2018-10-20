@@ -9,6 +9,7 @@ export class PostService {
 
   private _postUrl = 'https://igclone-backend.herokuapp.com/api/v1/posts';
   private _postUrl2 = "http://localhost:3000/api/v1/posts";
+  private Url2 = "http://localhost:3000/api/v1/";
 
   constructor(
     private http: HttpClient,
@@ -86,7 +87,9 @@ selectPost(postId) {
 */
 
 addNewPost(postInfo){
-  return this.http.post<any>(this._postUrl + "/addPost", postInfo)
+  //return this.http.post<any>(this._postUrl + "/addPost", postInfo)
+  return this.http.post<any>(this._postUrl2 + "/addPost", postInfo);
+  
 }
 
 
@@ -94,6 +97,12 @@ addNewPost(postInfo){
 getUserPost(id){
   return this.http.get<any>(`${this._postUrl}posts/${id}`)
  }
+
+
+
+ getDiscoverPosts(){
+  return this.http.get<any>(this.Url2 + "posts/discoverPost");
+};
 
 
 }

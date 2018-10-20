@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 import { UploadFileService } from '../../core/services/upload-file-service/upload-file.service';
 
@@ -27,7 +27,8 @@ export class ChangeProfilePicComponent implements OnInit {
   constructor(
     private uploadService: UploadFileService,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -45,6 +46,7 @@ export class ChangeProfilePicComponent implements OnInit {
     this.http.post(this.url + "changeProfile", this.fd)
     .subscribe( result => {
       console.log(result)
+      this.router.navigate(['/profile/post'], { relativeTo: this.route});
     });
   }
 

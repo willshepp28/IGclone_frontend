@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required, Validators.minLength(4)],
+      username: ['', [Validators.required, Validators.minLength(4)]],
       password: ['', [Validators.required, Validators.minLength(5)]]
   });
 
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-loginUser(){
+loginUser() {
 
   // We pass the loginForm.value to authenticate the user
   // If successufl we set the token and redirect the user to the /home page
@@ -57,10 +57,10 @@ loginUser(){
       },
       error => {
         this.Iserror = true;
-        this.message = "You entered the wrong email or password!"
-        console.log("This is a error brah")
+        this.message = "You entered the wrong email or password!";
+        console.log("This is a error brah");
       }
-    )
+    );
 }
 
   
