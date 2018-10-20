@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as jwt_decode from "jwt-decode";
 
@@ -25,6 +25,13 @@ export class ExploreComponent implements OnInit {
 
   users: any[] = [];
   posts: any[] = [];
+  screenWidth;
+  displayDiscoverSection: boolean = true;
+
+
+
+
+  //  if browser is less than 581 we need to make the discover section disappear
 
   constructor(
     private route: ActivatedRoute,
@@ -34,24 +41,56 @@ export class ExploreComponent implements OnInit {
     private discoverService: DiscoverService
   ) { }
 
+
+
+/*
+|--------------------------------------------------------------------------
+| We listen for a window resize with @HostListener to know whether or not to show discover section
+|  * If the screen is greater than or equal to 595, we display discover section
+|  * If the screen is less than 595, we remove display discover section from screen
+|--------------------------------------------------------------------------
+*/  
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    event.target.innerWidth;
+    console.log(event.target.innerWidth);
+
+    if (event.target.innerWidth >= 595 && this.displayDiscoverSection === false) {
+      this.displayDiscoverSection = true;
+    }
+
+    if(event.target.innerWidth < 595) {
+      this.displayDiscoverSection = false;
+    }
+  }
+
   ngOnInit() {
+
+
+    this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth <= 595) {
+      this.displayDiscoverSection = false;
+      console.log("The screen width is less than 581px")
+    }
+
     this.discoverService.discoverUsers()
       .subscribe(
-        
+
         response => { console.log(response), this.users = response },
         error => console.log(error)
       )
 
-      // This gets all the users post in IG_Clone
+    // This gets all the users post in IG_Clone
     this.discoverService.getDiscoverPosts()
       .subscribe(
-        response => { console.log(response), this.posts = response},
+        response => { console.log(response), this.posts = response },
         error => console.log(error)
       )
   }
 
 
-  followUser(userId){
+  followUser(userId) {
     console.log(`User id is : ${userId}`)
 
     // var token = this.getDecodedAccessToken(localStorage.getItem('token'));
@@ -60,7 +99,7 @@ export class ExploreComponent implements OnInit {
 
     this.followService.followUser(userId)
       .subscribe(
-        response => { console.log(response)},
+        response => { console.log(response) },
         error => console.log(error)
       )
   }
