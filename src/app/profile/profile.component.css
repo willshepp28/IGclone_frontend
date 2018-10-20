@@ -11,3 +11,7 @@ Profile Styling
 p {
     cursor: pointer;
 }
+
+.profile-btn {
+    width:100%;
+}

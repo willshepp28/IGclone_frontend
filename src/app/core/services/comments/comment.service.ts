@@ -26,7 +26,7 @@ export class CommentService {
 | POST - Add a new comment
 |--------------------------------------------------------------------------
 */
-  addComment(comment){
+  addComment(comment): Observable<any[]>{
     return this.http.post<any>(this.commentUrl, comment)
   }
 
@@ -36,7 +36,7 @@ export class CommentService {
 | GET - gets all comments on one post
 |--------------------------------------------------------------------------
 */
-  getAllPostsOnAComment(postId){
+  getAllPostsOnAComment(postId): Observable<any[]>{
     return this.http.get<any>(`${this.commentUrl}/${postId}`)
   }
 }

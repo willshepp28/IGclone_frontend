@@ -27,7 +27,7 @@ export class UserService {
 | GET - gets one user profile data
 |--------------------------------------------------------------------------
 */
-  getUser(id){
+  getUser(id) {
     return this.http.get<any>(this.url + `profile/${id}`);
   }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -45,7 +46,7 @@ export class SavedPostService {
 | GET- gets all posts a user has saved
 |--------------------------------------------------------------------------
 */
-  getUsersSavedPost(id) {
+  getUsersSavedPost(id): Observable<any[]> {
     return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/savedPost/${id}`)
   }
 }

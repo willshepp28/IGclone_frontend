@@ -1,9 +1,9 @@
 
-<div class="container pt-5 w-75">
+<div class="container pt-5 ">
 
 
   
-  <div class="row w-75 m-auto">
+  <div class="row m-auto">
     <div class="col">
         <img src="{{profilePic}}" style="height:100px" alt="" class="rounded-circle">
     </div>
@@ -24,8 +24,9 @@
 
 
         <div class="row mt-3" *ngIf="show">
-          <div class="col-6"><button class="btn btn-primary" (click)="showAddPost()">Add a Post</button></div>
-          <div class="col-6"><button class="btn btn-primary" (click)="showChangeProfilePic()">Change Profile Picture</button></div>
+          
+          <div><button class="btn btn-primary profile-btn btn-block" (click)="showAddPost()"><span>Add a Post</span></button></div>
+          <div><button class="btn btn-primary profile-btn btn-block" (click)="showChangeProfilePic()"><span>Change Picture</span></button></div>
         </div>
 
       </div>

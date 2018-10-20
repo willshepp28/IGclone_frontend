@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 
@@ -28,7 +29,7 @@ export class PostService {
 | GET - gets all posts
 |--------------------------------------------------------------------------
 */
-getPosts(){
+getPosts(): Observable<any[]> {
   return this.http.get<any>(this.postUrl);
 }
 
@@ -51,7 +52,7 @@ addNewPost(postInfo){
 | GET - get one post when user likes/unlikes or saves/unsaves
 |--------------------------------------------------------------------------
 */
-getUpdatedPost(postId){
+getUpdatedPost(postId): Observable<any[]> {
   return this.http.get<any>(this.postUrl + "/update/" + postId)
 };
 
@@ -62,7 +63,7 @@ getUpdatedPost(postId){
 | Gets all the logged in users posts
 |--------------------------------------------------------------------------
 */
-getAllUserPosts(id){
+getAllUserPosts(id): Observable<any[]> {
   return this.http.get<any>(`${this.postUrl}/all/${id}`)
  }
 
@@ -73,8 +74,8 @@ getAllUserPosts(id){
 | GET - gets one post
 |--------------------------------------------------------------------------
 */
-  getPost(postId){
-    return this.http.get(`https://igclone-backend.herokuapp.com/api/v1/posts/${postId}`)
+  getPost(postId): Observable<any[]> {
+    return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/posts/${postId}`)
   }
 
 

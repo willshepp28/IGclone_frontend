@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -34,7 +35,7 @@ export class TotalService {
 | GET - gets the total number of users, the logged in user is following
 |--------------------------------------------------------------------------
 */
-  getTotalFollowing(id){
+  getTotalFollowing(id) {
     return this.http.get<any>(this.totalUrl + `/following/${id}`);
   }
 
@@ -44,7 +45,7 @@ export class TotalService {
 | GET - gets the total number of users that are following, the logged in user
 |--------------------------------------------------------------------------
 */
-  getUserWhereFollower(id){
+  getUserWhereFollower(id) {
     return this.http.get<any>(this.totalUrl + `/follower/${id}`);
   }
 

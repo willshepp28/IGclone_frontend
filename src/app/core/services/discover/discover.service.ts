@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class DiscoverService {
 | GET - gets new users that the logged in user isnt following
 |--------------------------------------------------------------------------
 */
-  discoverUsers(){
+  discoverUsers(): Observable<any[]>{
     return this.http.get<any>(this.url + "users");
   };
 
@@ -28,7 +29,7 @@ export class DiscoverService {
 | GET - lets the user discover new posts
 |--------------------------------------------------------------------------
 */
-  getDiscoverPosts(){
+  getDiscoverPosts(): Observable<any[]>{
     return this.http.get<any>(this.url + "posts");
   };
 }
