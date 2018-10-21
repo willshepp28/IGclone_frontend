@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class SavedPostService {
 
-  private saveUrl = "https://igclone-backend.herokuapp.com/api/v1/savedPost";
-  private saveUrl2 = "http://localhost:3000/api/v1/savedPost";
+  private herokuUrl = "https://igclone-backend.herokuapp.com/api/v1/savedPost";
+  private serverUrl = "http://localhost:3000/api/v1/savedPost";
 
   constructor(
     private http: HttpClient
@@ -32,7 +32,7 @@ export class SavedPostService {
       "Content-Type": "application/json"
     });
 
-    return this.http.post<any>(this.saveUrl, postId,
+    return this.http.post<any>(this.herokuUrl, postId,
       {
         headers: httpHeaders,
         observe: 'response'

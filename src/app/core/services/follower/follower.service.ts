@@ -14,6 +14,14 @@ export class FollowerService {
   ) { }
 
 
+
+  
+
+/*
+|--------------------------------------------------------------------------
+| GET - we use this to get all the followers that, where the user hasnt accepted their follow request yet.
+|--------------------------------------------------------------------------
+*/
   getFollowers(token): Observable<any[]>{
     return this.http.get<any>(`https://igclone-backend.herokuapp.com/api/v1/follower/${token}`);
   }

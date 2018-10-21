@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class TotalService {
 
-  private totalUrl = "https://igclone-backend.herokuapp.com/api/v1/total";
-  private totalUrl2 = "http://localhost:3000/api/v1/total"; // used in production
+  private herokuUrl = "https://igclone-backend.herokuapp.com/api/v1/total";
+  private serverUrl = "http://localhost:3000/api/v1/total"; // used in production
 
   constructor(
     private http: HttpClient
@@ -26,7 +26,7 @@ export class TotalService {
 |--------------------------------------------------------------------------
 */
   getNumberOfPosts(id){
-    return this.http.get<any>(this.totalUrl + `/postAmount/${id}`);
+    return this.http.get<any>(this.herokuUrl + `/postAmount/${id}`);
   }
 
 
@@ -36,7 +36,7 @@ export class TotalService {
 |--------------------------------------------------------------------------
 */
   getTotalFollowing(id) {
-    return this.http.get<any>(this.totalUrl + `/following/${id}`);
+    return this.http.get<any>(this.herokuUrl + `/following/${id}`);
   }
 
 
@@ -46,7 +46,7 @@ export class TotalService {
 |--------------------------------------------------------------------------
 */
   getUserWhereFollower(id) {
-    return this.http.get<any>(this.totalUrl + `/follower/${id}`);
+    return this.http.get<any>(this.herokuUrl + `/follower/${id}`);
   }
 
 

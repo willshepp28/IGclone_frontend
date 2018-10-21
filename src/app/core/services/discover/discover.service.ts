@@ -7,8 +7,8 @@ import { Observable } from "rxjs";
 })
 export class DiscoverService {
 
-  private url = 'https://igclone-backend.herokuapp.com/api/v1/discover/';
-  private url2 = "http://localhost:3000/api/v1/discover/"; // used in production 
+  private herokuUrl = 'https://igclone-backend.herokuapp.com/api/v1/discover/';
+  private serverUrl = "http://localhost:3000/api/v1/discover/"; // used in production 
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class DiscoverService {
 |--------------------------------------------------------------------------
 */
   discoverUsers(): Observable<any[]>{
-    return this.http.get<any>(this.url + "users");
+    return this.http.get<any>(this.herokuUrl + "users");
   };
 
 
@@ -30,6 +30,6 @@ export class DiscoverService {
 |--------------------------------------------------------------------------
 */
   getDiscoverPosts(): Observable<any[]>{
-    return this.http.get<any>(this.url + "posts");
+    return this.http.get<any>(this.herokuUrl + "posts");
   };
 }

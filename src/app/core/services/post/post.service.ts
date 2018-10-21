@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 })
 export class PostService {
 
-  private postUrl = 'https://igclone-backend.herokuapp.com/api/v1/posts';
-  private postUrl2 = "http://localhost:3000/api/v1/posts";
+  private herokuUrl = 'https://igclone-backend.herokuapp.com/api/v1/posts';
+  private serverUrl = "http://localhost:3000/api/v1/posts"; // used in production
 
 
   constructor(
@@ -30,7 +30,7 @@ export class PostService {
 |--------------------------------------------------------------------------
 */
 getPosts(): Observable<any[]> {
-  return this.http.get<any>(this.postUrl);
+  return this.http.get<any>(this.herokuUrl);
 }
 
 
@@ -41,7 +41,7 @@ getPosts(): Observable<any[]> {
 |--------------------------------------------------------------------------
 */
 addNewPost(postInfo){
-  return this.http.post<any>(this.postUrl + "/addPost", postInfo);
+  return this.http.post<any>(this.herokuUrl + "/addPost", postInfo);
   
 }
 
@@ -53,7 +53,7 @@ addNewPost(postInfo){
 |--------------------------------------------------------------------------
 */
 getUpdatedPost(postId): Observable<any[]> {
-  return this.http.get<any>(this.postUrl + "/update/" + postId)
+  return this.http.get<any>(this.herokuUrl + "/update/" + postId)
 };
 
 
@@ -64,7 +64,7 @@ getUpdatedPost(postId): Observable<any[]> {
 |--------------------------------------------------------------------------
 */
 getAllUserPosts(id): Observable<any[]> {
-  return this.http.get<any>(`${this.postUrl}/all/${id}`)
+  return this.http.get<any>(`${this.herokuUrl}/all/${id}`)
  }
 
 

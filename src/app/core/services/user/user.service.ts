@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 export class UserService {
 
 
-  private url = "https://igclone-backend.herokuapp.com/api/v1/";
-  private url2 = "http://localhost:3000/api/v1/";
+  private herokuUrl = "https://igclone-backend.herokuapp.com/api/v1/";
+  private serverUrl = "http://localhost:3000/api/v1/"; // used in production
 
 
   constructor(
@@ -28,7 +28,7 @@ export class UserService {
 |--------------------------------------------------------------------------
 */
   getUser(id) {
-    return this.http.get<any>(this.url + `profile/${id}`);
+    return this.http.get<any>(this.herokuUrl + `profile/${id}`);
   }
 
 

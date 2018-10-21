@@ -14,8 +14,8 @@ import { map } from 'rxjs/operators';
 export class CommentService {
 
 
-  private commentUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
-  private commentUrl2 = "http://localhost:3000/api/v1/comments";
+  private herokuUrl = "https://igclone-backend.herokuapp.com/api/v1/comments";
+  private serverUrl = "http://localhost:3000/api/v1/comments";
 
   constructor(
     private http: HttpClient
@@ -27,7 +27,7 @@ export class CommentService {
 |--------------------------------------------------------------------------
 */
   addComment(comment): Observable<any[]>{
-    return this.http.post<any>(this.commentUrl, comment)
+    return this.http.post<any>(this.herokuUrl, comment)
   }
 
 
@@ -37,6 +37,6 @@ export class CommentService {
 |--------------------------------------------------------------------------
 */
   getAllPostsOnAComment(postId): Observable<any[]>{
-    return this.http.get<any>(`${this.commentUrl}/${postId}`)
+    return this.http.get<any>(`${this.herokuUrl}/${postId}`)
   }
 }
