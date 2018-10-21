@@ -7,6 +7,7 @@
 
 This is my own version of instagram.
 
+Check out the application live at https://igclone-frontend.herokuapp.com/login<br/>
 Check out the server side on code at https://github.com/willshepp28/IGclone_backend
 
 ---
