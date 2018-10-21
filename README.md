@@ -30,7 +30,7 @@ This is my own version of instagram.
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-<img height="350px" width="244px"  src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" width="244px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
