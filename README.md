@@ -7,6 +7,8 @@
 
 This is my own version of instagram.
 
+Check out the server side on code at https://github.com/willshepp28/IGclone_backend
+
 ---
 
 
@@ -19,6 +21,152 @@ This is my own version of instagram.
  Knex/ PostgreSQL
  AWS S3
  
+```
+
+
+
+
+
+## Folder Structure 
+
+```
+    frontend
+    ├── README.md
+    ├── angular.json
+    ├── e2e
+    │   ├── protractor.conf.js
+    │   ├── src
+    │   │   ├── app.e2e-spec.ts
+    │   │   └── app.po.ts
+    │   └── tsconfig.e2e.json
+    ├── package-lock.json
+    ├── package.json
+    ├── server.js
+    ├── src
+    │   ├── app
+    │   │   ├── app-routing.module.ts
+    │   │   ├── app.component.css
+    │   │   ├── app.component.html
+    │   │   ├── app.component.spec.ts
+    │   │   ├── app.component.ts
+    │   │   ├── app.module.ts
+    │   │   ├── core
+    │   │   │   ├── authentication
+    │   │   │   │   ├── auth.service.spec.ts
+    │   │   │   │   └── auth.service.ts
+    │   │   │   ├── guards
+    │   │   │   │   └── auth-guard
+    │   │   │   │       ├── auth.guard.spec.ts
+    │   │   │   │       └── auth.guard.ts
+    │   │   │   ├── helper
+    │   │   │   │   └── decodeToken
+    │   │   │   │       ├── decode-token.service.spec.ts
+    │   │   │   │       └── decode-token.service.ts
+    │   │   │   ├── interceptors
+    │   │   │   │   └── token-interceptor
+    │   │   │   │       ├── token-interceptor.service.spec.ts
+    │   │   │   │       └── token-interceptor.service.ts
+    │   │   │   ├── models
+    │   │   │   │   └── User.model.ts
+    │   │   │   ├── services
+    │   │   │   │   ├── comments
+    │   │   │   │   │   ├── comment.service.spec.ts
+    │   │   │   │   │   └── comment.service.ts
+    │   │   │   │   ├── discover
+    │   │   │   │   │   ├── discover.service.spec.ts
+    │   │   │   │   │   └── discover.service.ts
+    │   │   │   │   ├── follower
+    │   │   │   │   │   ├── follower.service.spec.ts
+    │   │   │   │   │   └── follower.service.ts
+    │   │   │   │   ├── like
+    │   │   │   │   │   ├── like.service.spec.ts
+    │   │   │   │   │   └── like.service.ts
+    │   │   │   │   ├── post
+    │   │   │   │   │   ├── post.service.spec.ts
+    │   │   │   │   │   └── post.service.ts
+    │   │   │   │   ├── saved-post
+    │   │   │   │   │   ├── saved-post.service.spec.ts
+    │   │   │   │   │   └── saved-post.service.ts
+    │   │   │   │   ├── total
+    │   │   │   │   │   ├── total.service.spec.ts
+    │   │   │   │   │   └── total.service.ts
+    │   │   │   │   ├── upload-file-service
+    │   │   │   │   │   ├── upload-file.service.spec.ts
+    │   │   │   │   │   └── upload-file.service.ts
+    │   │   │   │   └── user
+    │   │   │   │       ├── user.service.spec.ts
+    │   │   │   │       └── user.service.ts
+    │   │   │   └── store
+    │   │   ├── explore
+    │   │   │   ├── explore.component.css
+    │   │   │   ├── explore.component.html
+    │   │   │   ├── explore.component.spec.ts
+    │   │   │   └── explore.component.ts
+    │   │   ├── home
+    │   │   │   ├── home.component.css
+    │   │   │   ├── home.component.html
+    │   │   │   ├── home.component.spec.ts
+    │   │   │   └── home.component.ts
+    │   │   ├── login
+    │   │   │   ├── login.component.css
+    │   │   │   ├── login.component.html
+    │   │   │   ├── login.component.spec.ts
+    │   │   │   └── login.component.ts
+    │   │   ├── post
+    │   │   │   ├── post.component.css
+    │   │   │   ├── post.component.html
+    │   │   │   ├── post.component.spec.ts
+    │   │   │   └── post.component.ts
+    │   │   ├── profile
+    │   │   │   ├── add-post
+    │   │   │   │   ├── add-post.component.css
+    │   │   │   │   ├── add-post.component.html
+    │   │   │   │   ├── add-post.component.spec.ts
+    │   │   │   │   └── add-post.component.ts
+    │   │   │   ├── change-profile-pic
+    │   │   │   │   ├── change-profile-pic.component.css
+    │   │   │   │   ├── change-profile-pic.component.html
+    │   │   │   │   ├── change-profile-pic.component.spec.ts
+    │   │   │   │   └── change-profile-pic.component.ts
+    │   │   │   ├── post
+    │   │   │   │   ├── post.component.css
+    │   │   │   │   ├── post.component.html
+    │   │   │   │   ├── post.component.spec.ts
+    │   │   │   │   └── post.component.ts
+    │   │   │   ├── profile.component.css
+    │   │   │   ├── profile.component.html
+    │   │   │   ├── profile.component.spec.ts
+    │   │   │   ├── profile.component.ts
+    │   │   │   └── saved
+    │   │   │       ├── saved.component.css
+    │   │   │       ├── saved.component.html
+    │   │   │       ├── saved.component.spec.ts
+    │   │   │       └── saved.component.ts
+    │   │   ├── shared
+    │   │   │   └── shared.module.ts
+    │   │   └── signup
+    │   │       ├── signup.component.css
+    │   │       ├── signup.component.html
+    │   │       ├── signup.component.spec.ts
+    │   │       └── signup.component.ts
+    │   ├── assets
+    │   ├── browserslist
+    │   ├── environments
+    │   │   ├── environment.prod.ts
+    │   │   └── environment.ts
+    │   ├── index.html
+    │   ├── karma.conf.js
+    │   ├── main.ts
+    │   ├── polyfills.ts
+    │   ├── styles.css
+    │   ├── test.ts
+    │   ├── tsconfig.app.json
+    │   ├── tsconfig.spec.json
+    │   └── tslint.json
+    ├── tsconfig.json
+    └── tslint.json
+
+
 ```
 
 
@@ -102,3 +250,6 @@ This is my own version of instagram.
   - [X] Users should be able to unlike posts
   - [X]  Users should only get be able to like one time per post
   - [X]  Users should be able to comment on posts
+
+
+
