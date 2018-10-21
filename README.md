@@ -26,21 +26,21 @@ This is my own version of instagram.
 
 ## Site Layout
 
- ### Desktop Layout
+### Mobile Layout
+
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-signup.png">  |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-login.png"> 
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile.png">
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-profile.png"> 
 
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile%3Aid.png">
-
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-post%3Aid.png"> 
 
 ### Tablet Layout
 
@@ -57,22 +57,24 @@ This is my own version of instagram.
 :-------------------------:|:-------------------------:
 <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-explore.png">   |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/tablet/tablet-post%3Aid.png"> 
 
-
-### Mobile Layout
-
+ ### Desktop Layout
 
  Sign Up            |  Login
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-signup.png">  |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-login.png"> 
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-signup.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-login.png">
 
  Home           |  Profile
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-profile.png"> 
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-home.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile.png">
 
 
  Explore         |  Post/:id
 :-------------------------:|:-------------------------:
-<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/mobile/mobile-post%3Aid.png"> 
+<img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-explore.png"> |  <img height="350px" src="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/desktop/desktop-profile%3Aid.png">
+
+
+
+
 
 ## Features
 
