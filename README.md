@@ -34,11 +34,6 @@ Check out the server side on code at https://github.com/willshepp28/IGclone_back
     ├── README.md
     ├── angular.json
     ├── e2e
-    │   ├── protractor.conf.js
-    │   ├── src
-    │   │   ├── app.e2e-spec.ts
-    │   │   └── app.po.ts
-    │   └── tsconfig.e2e.json
     ├── package-lock.json
     ├── package.json
     ├── server.js
@@ -152,8 +147,6 @@ Check out the server side on code at https://github.com/willshepp28/IGclone_back
     │   ├── assets
     │   ├── browserslist
     │   ├── environments
-    │   │   ├── environment.prod.ts
-    │   │   └── environment.ts
     │   ├── index.html
     │   ├── karma.conf.js
     │   ├── main.ts
