@@ -58,6 +58,9 @@ export class HomeComponent implements OnInit {
         response => {
           // console.log(response),
             this.posts = response,
+            // this.post.forEach((i) => {
+            //   console.log()
+            // })
             this.postLength = this.posts.length
         },
         error => {

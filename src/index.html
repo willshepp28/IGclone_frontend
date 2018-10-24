@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Instagram</title>
@@ -7,9 +8,37 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="https://s3.us-east-2.amazonaws.com/ig-clone2019/assets/ig-favicon.png" />
+
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root>
+    <style>
+      app-root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      body {
+        background: rgb(250, 250, 250);
+        margin: 0;
+        padding: 0;
+      }
+
+      .ig_loadingIcon {
+        background: url("https://www.instagram.com/static/bundles/base/sprite_core.png/96319a506a03.png");
+        background-position: -123px 84px;
+        height: 42px;
+        width: 53px;
+      }
+    </style>
+
+    <div class="ig_loadingIcon"></div>
+
+    <!-- Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span> -->
+  </app-root>
 </body>
 
 </html>
