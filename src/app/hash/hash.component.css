@@ -1,0 +1,16 @@
+.mt-100 {
+    margin-top: 50px !important;
+}
+
+.grey {
+    color: #999;
+}
+
+.font-weight600 {
+    font-weight: 600;
+}
+
+
+.postImg {
+    max-height: 400px;
+}

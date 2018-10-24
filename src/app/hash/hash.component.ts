@@ -13,6 +13,10 @@ export class HashComponent implements OnInit {
 
   posts = <any>[];
   hashtag: string;
+  hashtags: string;
+
+
+
 
   constructor(
     private http: HttpClient,
@@ -40,6 +44,7 @@ export class HashComponent implements OnInit {
         }
       )
   }
+
 
 
 
