@@ -17,6 +17,7 @@ export class HashstagsService {
 |--------------------------------------------------------------------------
 */
 getPostByHashtag(hashName){
+  console.log(hashName);
   return this.http.get<any>(this.serverUrl + `/${hashName}`);
 };
 

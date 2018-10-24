@@ -11,7 +11,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class HashComponent implements OnInit {
 
-  post = <any>[];
+  posts = <any>[];
+  hashtag: string;
 
   constructor(
     private http: HttpClient,
@@ -24,18 +25,23 @@ export class HashComponent implements OnInit {
     this.route.paramMap
       .subscribe(
         (params: ParamMap) => {
-          let name = parseInt(params.get("id"));
+          this.hashtag = `#${params.get("id")}`;
+          // let name = parseInt(params.get("id"));
+          let name = params.get("id")
 
           this.hashService.getPostByHashtag(name)
             .subscribe(
               response => {
                 console.log(response);
-                this.post = response;
+                this.posts = response;
               },
               error => { console.log(error)}
             )
         }
       )
   }
+
+
+
 
 }
