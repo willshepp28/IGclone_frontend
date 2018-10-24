@@ -21,6 +21,7 @@ import { AddPostComponent } from './profile/add-post/add-post.component';
 import { ChangeProfilePicComponent } from './profile/change-profile-pic/change-profile-pic.component';
 import { PostComponent } from './profile/post/post.component';
 import { SavedComponent } from './profile/saved/saved.component';
+import { HashComponent } from './hash/hash.component';
 
 
 // Services
@@ -50,6 +51,7 @@ import { DecodeTokenService } from "./core/helper/decodeToken/decode-token.servi
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +64,8 @@ import { DecodeTokenService } from "./core/helper/decodeToken/decode-token.servi
     SavedComponent,
     OnePostComponent,
     AddPostComponent,
-    ChangeProfilePicComponent
+    ChangeProfilePicComponent,
+    HashComponent
   ],
   imports: [
     BrowserModule,
