@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PostService } from '../../core/services/post/post.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HashstagsService } from 'src/app/core/services/hashtags/hashstags.service';
 
 @Component({
   selector: 'app-add-post',
@@ -18,6 +19,7 @@ export class AddPostComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private postService: PostService,
+    private hashService: HashstagsService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -59,7 +61,14 @@ export class AddPostComponent implements OnInit {
         .subscribe(
           response => {
             console.log(response),
-            this.router.navigate(['/profile/post'], { relativeTo: this.route});
+
+            // we get the post.id then 
+            this.hashService.createHashTag(response)
+              .subscribe(
+                  response => { console.log(response),this.router.navigate(['/profile/post'], { relativeTo: this.route});}
+
+              )
+            
           },
           error => console.log(error)
         )

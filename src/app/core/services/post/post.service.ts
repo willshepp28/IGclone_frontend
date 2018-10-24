@@ -41,7 +41,7 @@ getPosts(): Observable<any[]> {
 |--------------------------------------------------------------------------
 */
 addNewPost(postInfo){
-  return this.http.post<any>(this.herokuUrl + "/addPost", postInfo);
+  return this.http.post<any>(this.serverUrl + "/addPost", postInfo);
   
 }
 
